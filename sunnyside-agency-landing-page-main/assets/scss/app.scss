@@ -1,7 +1,6 @@
 @use "variables";
 
-@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@100&family=Smooch+Sans:wght@100&display=swap');
 
 * {
     box-sizing: border-box;
@@ -10,7 +9,7 @@
 #sunnyside-agency-landing {
     font-family: 'Smooch Sans', sans-serif;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 20px;
     padding: 0;
     margin: 0;
 }
@@ -26,49 +25,83 @@
         height: 100vh;
 
         nav {
-            padding: 30px;
+            padding: 25px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
 
-            #toggle{
+            #toggle {
                 display: none;
             }
 
-            .menu{
+            .hamburguer {
+                background: url("../_images/icon-hamburger.svg");
+                width: 24px;
+                height: 18px;
+                background-repeat: no-repeat;
+            }
+            
+            .menu {
                 position: absolute;
-                top: 10%;
+                top: 15%;
                 left: 50%;
                 transform: translateX(-50%);
                 opacity: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 flex-direction: column;
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
-                li{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0 2rem;
-                    color: black; 
+
+                ::after {
+                    position: absolute;
+                    top: -15px;
+                    right: -20px;
+                    transform: rotate(270deg);
+                    width: 0;
+                    height: 0;
+                    content: "";
+                    border-left: 40px solid transparent;
+                    border-right: 40px solid transparent;
+                    border-bottom: 40px solid #fff;
                 }
-                
-                .active{
-                    background-color: red;
-                    width: 120px;
+
+                li {
+                    font-size: 1.4em;
+                    font-weight: bold;
+                    margin: 0.8rem 2rem;
+                    color: variables.$grey;
+                }
+
+                .active {
+                    text-align: center;
+                    font-size: 1.5em;
+                    color: black;
+                    background-color: variables.$yellow;
+                    width: 150px;
                     height: 50px;
                     border-radius: 25px;
                 }
-            
-                a{
+
+                a {
                     text-decoration: none;
                 }
             }
 
-            #toggle:checked ~ .menu {
+            #toggle:checked~.menu {
                 background-color: variables.$white;
                 opacity: 1;
+                width: 85%;
+                height: 50%;
+            }
+
+            #toggle:checked~.hamburguer {
+                background: url("../_images/icon-x.svg");
+                background-repeat: no-repeat;
+                background-position: center;
             }
         }
 
@@ -81,7 +114,7 @@
 
             h1 {
                 font-family: 'Smooch';
-                font-size: 3em;
+                font-size: 2.7em;
                 color: variables.$white;
                 font-weight: bolder;
                 text-transform: uppercase;
@@ -102,33 +135,34 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: bottom;
+
             nav {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-end;
-    
-                #toggle{
-                    display: none;
-                }
-                .hamburguer{
+                padding: 20px 50px 0 50px;
+                .hamburguer {
                     display: none;
                 }
 
-                .menu{
+                .menu {
                     position: initial;
                     background: none;
                     display: flex;
                     flex-direction: row;
                     opacity: 1;
                     transform: translateX(0);
-                    li{
+
+                    ::after {
+                       display: none;
+                    }
+
+                    li {
                         color: variables.$white;
-                        margin: 0 2rem;
                     }
-                    a{
-                        text-decoration: none;
+
+                    .active {
+                        background-color: variables.$white;
+                        margin-right: 0;
                     }
+
                 }
             }
         }

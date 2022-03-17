@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@100&family=Smooch+Sans:wght@100&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -7,7 +6,7 @@
 #sunnyside-agency-landing {
   font-family: "Smooch Sans", sans-serif;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 20px;
   padding: 0;
   margin: 0;
 }
@@ -22,7 +21,7 @@
   height: 100vh;
 }
 #sunnyside-agency-landing header nav {
-  padding: 30px;
+  padding: 25px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -31,27 +30,50 @@
 #sunnyside-agency-landing header nav #toggle {
   display: none;
 }
+#sunnyside-agency-landing header nav .hamburguer {
+  background: url("../_images/icon-hamburger.svg");
+  width: 24px;
+  height: 18px;
+  background-repeat: no-repeat;
+}
 #sunnyside-agency-landing header nav .menu {
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
+#sunnyside-agency-landing header nav .menu ::after {
+  position: absolute;
+  top: -15px;
+  right: -20px;
+  transform: rotate(270deg);
+  width: 0;
+  height: 0;
+  content: "";
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 40px solid #fff;
+}
 #sunnyside-agency-landing header nav .menu li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 2rem;
-  color: black;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0.8rem 2rem;
+  color: #a7abae;
 }
 #sunnyside-agency-landing header nav .menu .active {
-  background-color: red;
-  width: 120px;
+  text-align: center;
+  font-size: 1.5em;
+  color: black;
+  background-color: #fad400;
+  width: 150px;
   height: 50px;
   border-radius: 25px;
 }
@@ -61,6 +83,13 @@
 #sunnyside-agency-landing header nav #toggle:checked ~ .menu {
   background-color: white;
   opacity: 1;
+  width: 85%;
+  height: 50%;
+}
+#sunnyside-agency-landing header nav #toggle:checked ~ .hamburguer {
+  background: url("../_images/icon-x.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 #sunnyside-agency-landing header .title {
   display: flex;
@@ -71,7 +100,7 @@
 }
 #sunnyside-agency-landing header .title h1 {
   font-family: "Smooch";
-  font-size: 3em;
+  font-size: 2.7em;
   color: white;
   font-weight: bolder;
   text-transform: uppercase;
@@ -85,13 +114,7 @@
     background-position: bottom;
   }
   #sunnyside-agency-landing header nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-  #sunnyside-agency-landing header nav #toggle {
-    display: none;
+    padding: 20px 50px 0 50px;
   }
   #sunnyside-agency-landing header nav .hamburguer {
     display: none;
@@ -104,12 +127,15 @@
     opacity: 1;
     transform: translateX(0);
   }
+  #sunnyside-agency-landing header nav .menu ::after {
+    display: none;
+  }
   #sunnyside-agency-landing header nav .menu li {
     color: white;
-    margin: 0 2rem;
   }
-  #sunnyside-agency-landing header nav .menu a {
-    text-decoration: none;
+  #sunnyside-agency-landing header nav .menu .active {
+    background-color: white;
+    margin-right: 0;
   }
 }
 
