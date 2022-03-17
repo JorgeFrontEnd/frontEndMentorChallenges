@@ -22,7 +22,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: bottom;
-        height: 100vh;
+        min-height: 900px;
 
         nav {
             padding: 25px;
@@ -58,21 +58,20 @@
 
                 ::after {
                     position: absolute;
-                    top: -15px;
-                    right: -20px;
-                    transform: rotate(270deg);
+                    top: -35px;
+                    right: 0;
+                    transform: translateX(-0.5px);
                     width: 0;
                     height: 0;
-                    content: "";
+                    content: '';
                     border-left: 40px solid transparent;
-                    border-right: 40px solid transparent;
                     border-bottom: 40px solid #fff;
                 }
 
                 li {
                     font-size: 1.4em;
                     font-weight: bold;
-                    margin: 0.8rem 2rem;
+                    margin: 0.5rem 2rem;
                     color: variables.$grey;
                 }
 
@@ -95,7 +94,8 @@
                 background-color: variables.$white;
                 opacity: 1;
                 width: 85%;
-                height: 50%;
+                height: 60%;
+                z-index: 1;
             }
 
             #toggle:checked~.hamburguer {
@@ -110,11 +110,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 35%;
+            min-height: 500px;
 
             h1 {
                 font-family: 'Smooch';
-                font-size: 2.7em;
+                font-size: 2.5em;
                 color: variables.$white;
                 font-weight: bolder;
                 text-transform: uppercase;
@@ -122,19 +122,21 @@
             }
         }
 
-        // .arrow {
-        //     position: absolute;
-        //     left: 50%;
-        //     top: calc(50% - variables.$arrow_height);
-        // }
-    }
+        .arrow {
+            position: absolute;
+            left: calc(50% - variables.$arrow_width / 2);
+            top: calc(60% - variables.$arrow_height / 2);
+        }
 
+    }
+    
     @media(min-width:768px) {
         header {
             background-image: url("../_images/desktop/image-header.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: bottom;
+            height: 100vh;
 
             nav {
                 padding: 20px 50px 0 50px;
@@ -164,6 +166,19 @@
                     }
 
                 }
+            }
+
+            .title{
+                height: 50%;
+                h1{
+                    font-size: 4em;
+                }
+            }
+
+            .arrow {
+                position: absolute;
+                left: calc(50% - variables.$arrow_width / 2);
+                top: calc(50% - variables.$arrow_height / 2);
             }
         }
     }
