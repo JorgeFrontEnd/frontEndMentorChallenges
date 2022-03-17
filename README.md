@@ -1,2 +1,2 @@
 # PersonalProjects
-Repositório com os meus projetos individuais.
+Repositório com os meus projetos pessoais.
