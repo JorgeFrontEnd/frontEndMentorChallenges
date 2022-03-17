@@ -109,7 +109,7 @@
 #sunnyside-agency-landing header .arrow {
   position: absolute;
   left: calc(50% - 18px);
-  top: calc(60% - 57px);
+  top: calc(65% - 57px);
 }
 @media (min-width: 768px) {
   #sunnyside-agency-landing header {
