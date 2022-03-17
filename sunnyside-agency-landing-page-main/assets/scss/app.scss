@@ -1,0 +1,139 @@
+@use "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+#sunnyside-agency-landing {
+    font-family: 'Smooch Sans', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    padding: 0;
+    margin: 0;
+}
+
+/************************ Header **************************/
+#sunnyside-agency-landing {
+    header {
+        position: relative;
+        background-image: url("../_images/mobile/image-header.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        height: 100vh;
+
+        nav {
+            padding: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            #toggle{
+                display: none;
+            }
+
+            .menu{
+                position: absolute;
+                top: 10%;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0;
+                flex-direction: column;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                li{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 2rem;
+                    color: black; 
+                }
+                
+                .active{
+                    background-color: red;
+                    width: 120px;
+                    height: 50px;
+                    border-radius: 25px;
+                }
+            
+                a{
+                    text-decoration: none;
+                }
+            }
+
+            #toggle:checked ~ .menu {
+                background-color: variables.$white;
+                opacity: 1;
+            }
+        }
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 35%;
+
+            h1 {
+                font-family: 'Smooch';
+                font-size: 3em;
+                color: variables.$white;
+                font-weight: bolder;
+                text-transform: uppercase;
+                text-align: center;
+            }
+        }
+
+        // .arrow {
+        //     position: absolute;
+        //     left: 50%;
+        //     top: calc(50% - variables.$arrow_height);
+        // }
+    }
+
+    @media(min-width:768px) {
+        header {
+            background-image: url("../_images/desktop/image-header.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            nav {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+    
+                #toggle{
+                    display: none;
+                }
+                .hamburguer{
+                    display: none;
+                }
+
+                .menu{
+                    position: initial;
+                    background: none;
+                    display: flex;
+                    flex-direction: row;
+                    opacity: 1;
+                    transform: translateX(0);
+                    li{
+                        color: variables.$white;
+                        margin: 0 2rem;
+                    }
+                    a{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/************************ END Header **************************/

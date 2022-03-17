@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+#sunnyside-agency-landing {
+  font-family: "Smooch Sans", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  padding: 0;
+  margin: 0;
+}
+
+/************************ Header **************************/
+#sunnyside-agency-landing header {
+  position: relative;
+  background-image: url("../_images/mobile/image-header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 100vh;
+}
+#sunnyside-agency-landing header nav {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#sunnyside-agency-landing header nav #toggle {
+  display: none;
+}
+#sunnyside-agency-landing header nav .menu {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#sunnyside-agency-landing header nav .menu li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2rem;
+  color: black;
+}
+#sunnyside-agency-landing header nav .menu .active {
+  background-color: red;
+  width: 120px;
+  height: 50px;
+  border-radius: 25px;
+}
+#sunnyside-agency-landing header nav .menu a {
+  text-decoration: none;
+}
+#sunnyside-agency-landing header nav #toggle:checked ~ .menu {
+  background-color: white;
+  opacity: 1;
+}
+#sunnyside-agency-landing header .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 35%;
+}
+#sunnyside-agency-landing header .title h1 {
+  font-family: "Smooch";
+  font-size: 3em;
+  color: white;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  #sunnyside-agency-landing header {
+    background-image: url("../_images/desktop/image-header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+  #sunnyside-agency-landing header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  #sunnyside-agency-landing header nav #toggle {
+    display: none;
+  }
+  #sunnyside-agency-landing header nav .hamburguer {
+    display: none;
+  }
+  #sunnyside-agency-landing header nav .menu {
+    position: initial;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  #sunnyside-agency-landing header nav .menu li {
+    color: white;
+    margin: 0 2rem;
+  }
+  #sunnyside-agency-landing header nav .menu a {
+    text-decoration: none;
+  }
+}
+
+/************************ END Header **************************/
+
+/*# sourceMappingURL=app.css.map */
