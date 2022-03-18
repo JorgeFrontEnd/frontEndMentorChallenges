@@ -118,7 +118,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 100vh;
+    min-height: 1200px;
   }
   #sunnyside-agency-landing header nav {
     padding: 20px 50px 0 50px;
@@ -153,10 +153,81 @@
   #sunnyside-agency-landing header .arrow {
     position: absolute;
     left: calc(50% - 18px);
-    top: calc(50% - 57px);
+    top: calc(52% - 57px);
   }
 }
 
 /************************ END Header **************************/
+/************************ MAIN ********************************/
+#sunnyside-agency-landing main .main-content1 .invert-mobile-order {
+  display: flex;
+  flex-direction: column-reverse;
+}
+#sunnyside-agency-landing main .main-content1 [class^=col] {
+  margin: 0;
+  padding: 0;
+  height: 80vh;
+  min-height: 500px;
+}
+#sunnyside-agency-landing main .main-content1 .flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sunnyside-agency-landing main .main-content1 .flex .content {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 80%;
+  height: auto;
+}
+#sunnyside-agency-landing main .main-content1 .flex .content h3 {
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 55px;
+  padding-bottom: 20px;
+}
+#sunnyside-agency-landing main .main-content1 .flex .content p {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 30px;
+  padding-bottom: 20px;
+  color: #a7abae;
+}
+#sunnyside-agency-landing main .main-content1 .flex .content a {
+  font-size: 1.3em;
+  color: black;
+  text-decoration: none;
+  align-self: center;
+}
+#sunnyside-agency-landing main .main-content1 .bkg:nth-child(1) {
+  background-image: url("../_images/desktop/image-graphic-design.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#sunnyside-agency-landing main .main-content1 .bkg:nth-child(2) {
+  background-image: url("../_images/desktop/image-photography.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#sunnyside-agency-landing main .main-content1 picture img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 992px) {
+  #sunnyside-agency-landing main .main-content1 .invert-mobile-order {
+    display: flex;
+    flex-direction: row;
+  }
+  #sunnyside-agency-landing main .main-content1 .flex .content {
+    width: 50%;
+  }
+  #sunnyside-agency-landing main .main-content1 .flex .content a {
+    align-self: flex-start;
+  }
+}
+
+/************************END MAIN ********************************/
 
 /*# sourceMappingURL=app.css.map */

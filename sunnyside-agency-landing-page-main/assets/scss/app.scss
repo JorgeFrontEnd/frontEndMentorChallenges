@@ -42,7 +42,7 @@
                 height: 18px;
                 background-repeat: no-repeat;
             }
-            
+
             .menu {
                 position: absolute;
                 top: 15%;
@@ -130,17 +130,18 @@
         }
 
     }
-    
+
     @media(min-width:768px) {
         header {
             background-image: url("../_images/desktop/image-header.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: bottom;
-            height: 100vh;
+            min-height: 1200px;
 
             nav {
                 padding: 20px 50px 0 50px;
+
                 .hamburguer {
                     display: none;
                 }
@@ -154,7 +155,7 @@
                     transform: translateX(0);
 
                     ::after {
-                       display: none;
+                        display: none;
                     }
 
                     li {
@@ -169,9 +170,10 @@
                 }
             }
 
-            .title{
+            .title {
                 height: 50%;
-                h1{
+
+                h1 {
                     font-size: 4em;
                 }
             }
@@ -179,7 +181,7 @@
             .arrow {
                 position: absolute;
                 left: calc(50% - variables.$arrow_width / 2);
-                top: calc(50% - variables.$arrow_height / 2);
+                top: calc(52% - variables.$arrow_height / 2);
             }
         }
     }
@@ -187,3 +189,100 @@
 }
 
 /************************ END Header **************************/
+
+/************************ MAIN ********************************/
+#sunnyside-agency-landing {
+    main {
+        .main-content1{
+
+            .invert-mobile-order{
+                display: flex;
+                flex-direction: column-reverse;
+
+            }
+
+            [class^="col"] {
+                // border: 2px solid red;
+                margin: 0;
+                padding: 0;
+                height: 80vh;
+                min-height: 500px;
+            }
+    
+            .flex{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0;
+                    width: 80%;
+                    height: auto;
+        
+                    h3 {
+                        font-size: 3em;
+                        font-weight: bold;
+                        line-height: 55px;
+                        padding-bottom: 20px;
+                    }
+
+                    p{
+                        font-size: 1em;
+                        font-weight: bold;
+                        line-height: 30px;
+                        padding-bottom: 20px;
+                        color: variables.$grey; 
+                    }
+
+                    a{
+                        font-size: 1.3em;
+                        color: black;
+                        text-decoration: none;
+                        align-self: center;
+                    }
+                }
+ 
+            }
+
+            .bkg:nth-child(1){
+                background-image: url("../_images/desktop/image-graphic-design.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .bkg:nth-child(2){
+                background-image: url("../_images/desktop/image-photography.jpg");
+                background-size: cover;
+                background-repeat: no-repeat
+            }
+            
+            picture img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+            
+        }
+        
+        @media(min-width:992px){
+            .main-content1{
+                .invert-mobile-order{
+                    display: flex;
+                    flex-direction: row;
+                }
+                .flex{
+                    .content {
+                        width: 50%;
+                        a{
+                            align-self: flex-start;
+                        }
+                    }
+     
+                }
+            }
+        }
+    }
+}
+
+/************************END MAIN ********************************/
