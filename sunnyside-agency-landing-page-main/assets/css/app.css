@@ -18,6 +18,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
+  height: 100vh;
   min-height: 900px;
 }
 #sunnyside-agency-landing header nav {
@@ -83,7 +84,7 @@
   background-color: white;
   opacity: 1;
   width: 85%;
-  height: 60%;
+  height: 40%;
   z-index: 1;
 }
 #sunnyside-agency-landing header nav #toggle:checked ~ .hamburguer {
