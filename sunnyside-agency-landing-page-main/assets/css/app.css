@@ -166,8 +166,8 @@
 #sunnyside-agency-landing main .main-content1 [class^=col] {
   margin: 0;
   padding: 0;
-  height: 80vh;
-  min-height: 500px;
+  height: 60vh;
+  min-height: 600px;
 }
 #sunnyside-agency-landing main .main-content1 .flex {
   display: flex;
@@ -200,15 +200,43 @@
   text-decoration: none;
   align-self: center;
 }
+#sunnyside-agency-landing main .main-content1 .flex2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+#sunnyside-agency-landing main .main-content1 .flex2 .content2 {
+  width: 80%;
+  color: #25564b;
+  text-align: center;
+}
+#sunnyside-agency-landing main .main-content1 .flex2 .content2 h3 {
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 55px;
+  padding-bottom: 20px;
+}
+#sunnyside-agency-landing main .main-content1 .flex2 .content2 p {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 30px;
+  padding-bottom: 20px;
+}
+#sunnyside-agency-landing main .main-content1 .flex2 .photography {
+  color: #19536b;
+}
 #sunnyside-agency-landing main .main-content1 .bkg:nth-child(1) {
   background-image: url("../_images/desktop/image-graphic-design.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: top center;
 }
 #sunnyside-agency-landing main .main-content1 .bkg:nth-child(2) {
   background-image: url("../_images/desktop/image-photography.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: top center;
 }
 #sunnyside-agency-landing main .main-content1 picture img {
   object-fit: cover;
@@ -225,6 +253,9 @@
   }
   #sunnyside-agency-landing main .main-content1 .flex .content a {
     align-self: flex-start;
+  }
+  #sunnyside-agency-landing main .main-content1 .flex2 .content2 {
+    width: 45%;
   }
 }
 
