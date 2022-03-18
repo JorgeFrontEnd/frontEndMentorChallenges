@@ -159,103 +159,172 @@
 
 /************************ END Header **************************/
 /************************ MAIN ********************************/
-#sunnyside-agency-landing main .main-content1 .invert-mobile-order {
-  display: flex;
-  flex-direction: column-reverse;
-}
-#sunnyside-agency-landing main .main-content1 [class^=col] {
+#sunnyside-agency-landing main [class^=col] {
   margin: 0;
   padding: 0;
   height: 60vh;
   min-height: 600px;
 }
-#sunnyside-agency-landing main .main-content1 .flex {
+#sunnyside-agency-landing main .about .invert-mobile-order {
+  display: flex;
+  flex-direction: column-reverse;
+}
+#sunnyside-agency-landing main .about .flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#sunnyside-agency-landing main .main-content1 .flex .content {
+#sunnyside-agency-landing main .about .flex .content {
   display: flex;
   flex-direction: column;
   padding: 0;
   width: 80%;
   height: auto;
 }
-#sunnyside-agency-landing main .main-content1 .flex .content h3 {
+#sunnyside-agency-landing main .about .flex .content h3 {
   font-size: 3em;
   font-weight: bold;
   line-height: 55px;
   padding-bottom: 20px;
 }
-#sunnyside-agency-landing main .main-content1 .flex .content p {
+#sunnyside-agency-landing main .about .flex .content p {
   font-size: 1em;
   font-weight: bold;
   line-height: 30px;
   padding-bottom: 20px;
   color: #a7abae;
 }
-#sunnyside-agency-landing main .main-content1 .flex .content a {
+#sunnyside-agency-landing main .about .flex .content a {
   font-size: 1.3em;
   color: black;
   text-decoration: none;
   align-self: center;
 }
-#sunnyside-agency-landing main .main-content1 .flex2 {
+#sunnyside-agency-landing main .about .flex2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
 }
-#sunnyside-agency-landing main .main-content1 .flex2 .content2 {
+#sunnyside-agency-landing main .about .flex2 .content2 {
   width: 80%;
   color: #25564b;
   text-align: center;
 }
-#sunnyside-agency-landing main .main-content1 .flex2 .content2 h3 {
+#sunnyside-agency-landing main .about .flex2 .content2 h3 {
   font-size: 3em;
   font-weight: bold;
   line-height: 55px;
   padding-bottom: 20px;
 }
-#sunnyside-agency-landing main .main-content1 .flex2 .content2 p {
+#sunnyside-agency-landing main .about .flex2 .content2 p {
   font-size: 1em;
   font-weight: bold;
   line-height: 30px;
   padding-bottom: 20px;
 }
-#sunnyside-agency-landing main .main-content1 .flex2 .photography {
+#sunnyside-agency-landing main .about .flex2 .photography {
   color: #19536b;
 }
-#sunnyside-agency-landing main .main-content1 .bkg:nth-child(1) {
+#sunnyside-agency-landing main .about .bkg:nth-child(1) {
   background-image: url("../_images/desktop/image-graphic-design.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
 }
-#sunnyside-agency-landing main .main-content1 .bkg:nth-child(2) {
+#sunnyside-agency-landing main .about .bkg:nth-child(2) {
   background-image: url("../_images/desktop/image-photography.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
 }
-#sunnyside-agency-landing main .main-content1 picture img {
+#sunnyside-agency-landing main .about picture img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 @media (min-width: 992px) {
-  #sunnyside-agency-landing main .main-content1 .invert-mobile-order {
+  #sunnyside-agency-landing main .about .invert-mobile-order {
     display: flex;
     flex-direction: row;
   }
-  #sunnyside-agency-landing main .main-content1 .flex .content {
-    width: 50%;
+  #sunnyside-agency-landing main .about .flex .content {
+    width: 60%;
   }
-  #sunnyside-agency-landing main .main-content1 .flex .content a {
+  #sunnyside-agency-landing main .about .flex .content a {
     align-self: flex-start;
   }
-  #sunnyside-agency-landing main .main-content1 .flex2 .content2 {
-    width: 45%;
+  #sunnyside-agency-landing main .about .flex2 .content2 {
+    width: 60%;
+  }
+}
+#sunnyside-agency-landing main .testimonals {
+  padding-top: 15vh;
+}
+#sunnyside-agency-landing main .testimonals [class^=col] {
+  height: 40vh;
+  min-height: 360px;
+}
+#sunnyside-agency-landing main .testimonals .container-fluid {
+  max-width: 1080px;
+}
+#sunnyside-agency-landing main .testimonals .container-fluid h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 2em;
+  color: #a7abae;
+  padding-bottom: 20px;
+}
+#sunnyside-agency-landing main .testimonals .container-fluid .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 45px;
+}
+#sunnyside-agency-landing main .testimonals .container-fluid .content p {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+}
+#sunnyside-agency-landing main .testimonals .container-fluid .content picture {
+  text-align: center;
+}
+#sunnyside-agency-landing main .testimonals .container-fluid .content picture img {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
+#sunnyside-agency-landing main .testimonals .container-fluid .content .desc .name {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 900;
+  color: black;
+}
+#sunnyside-agency-landing main .testimonals .container-fluid .content .desc p {
+  margin: 0;
+  font-weight: bold;
+  color: #a7abae;
+}
+@media (min-width: 768px) {
+  #sunnyside-agency-landing main .testimonals {
+    padding-top: 15vh;
+  }
+  #sunnyside-agency-landing main .testimonals h4 {
+    font-size: 3em;
+  }
+  #sunnyside-agency-landing main .testimonals .content {
+    padding: 40px;
+  }
+  #sunnyside-agency-landing main .testimonals .content p {
+    margin-top: 50px;
+  }
+  #sunnyside-agency-landing main .testimonals .content .desc .name {
+    padding-top: 40px;
   }
 }
 
