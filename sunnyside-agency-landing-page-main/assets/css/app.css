@@ -80,6 +80,10 @@
   height: 50px;
   border-radius: 25px;
 }
+#sunnyside-agency-landing header nav .menu a .active:hover {
+  background-color: #7896b8;
+  color: #fff;
+}
 #sunnyside-agency-landing header nav #toggle:checked ~ .menu {
   background-color: white;
   opacity: 1;
@@ -370,6 +374,9 @@
   margin: 0;
   padding: 0;
 }
+#sunnyside-agency-landing footer ul :hover {
+  color: white;
+}
 #sunnyside-agency-landing footer ul li {
   color: #458c7e;
   margin: 0 2rem;
@@ -380,8 +387,11 @@
   align-items: center;
   margin-top: 100px;
 }
-#sunnyside-agency-landing footer .links img {
+#sunnyside-agency-landing footer .links svg {
   margin: 0 1rem;
+}
+#sunnyside-agency-landing footer .links svg :hover {
+  fill: white;
 }
 
 /*************************END FOOTER **************************/

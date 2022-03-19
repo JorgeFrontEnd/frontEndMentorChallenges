@@ -88,6 +88,10 @@
                     height: 50px;
                     border-radius: 25px;
                 }
+                a .active:hover{
+                    background-color: rgb(120, 150, 184);
+                    color: #fff;
+                }
             }
 
             #toggle:checked~.menu {
@@ -317,6 +321,7 @@
                         width: 60%;
                     }
                 }
+
             }
         }
 
@@ -380,6 +385,7 @@
                             color: variables.$grey;
                         }
                     }
+
                 }
             }
         }
@@ -461,10 +467,14 @@
             list-style-type: none;
             margin: 0;
             padding: 0;
+            :hover{
+                color: variables.$white;
+            }
 
             li {
                 color: #458c7e;
                 margin: 0 2rem;
+                
             }
         }
 
@@ -473,8 +483,11 @@
             justify-content: center;
             align-items: center;
             margin-top: 100px;
-            img{
+            svg{
                 margin: 0 1rem;
+                :hover{
+                    fill: variables.$white;
+                }
             }
            
         }
