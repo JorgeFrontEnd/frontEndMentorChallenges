@@ -204,6 +204,16 @@
   text-decoration: none;
   align-self: center;
 }
+#sunnyside-agency-landing main .about .flex .content a.first-hover:hover {
+  text-decoration: underline;
+  text-decoration-color: #fad400;
+  text-decoration-thickness: 6px;
+}
+#sunnyside-agency-landing main .about .flex .content a.second-hover:hover {
+  text-decoration: underline;
+  text-decoration-color: #fe7867;
+  text-decoration-thickness: 6px;
+}
 #sunnyside-agency-landing main .about .flex2 {
   display: flex;
   flex-direction: row;
