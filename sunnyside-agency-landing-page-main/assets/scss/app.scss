@@ -19,6 +19,7 @@
     a {
         text-decoration: none;
     }
+
     header {
         position: relative;
         background-image: url("../_images/mobile/image-header.jpg");
@@ -88,7 +89,8 @@
                     height: 50px;
                     border-radius: 25px;
                 }
-                a .active:hover{
+
+                a .active:hover {
                     background-color: rgb(120, 150, 184);
                     color: #fff;
                 }
@@ -236,27 +238,55 @@
                         color: variables.$grey;
                     }
 
-                    a{
-                        font-size: 1.3em;
+                    a {
+                        position: relative;
+                        font-size: 1.5em;
                         color: black;
                         text-decoration: none;
                         align-self: center;
-                        &.first-hover{
-                            &:hover{
-                                text-decoration: underline;
-                                text-decoration-color: variables.$yellow;
-                                text-decoration-thickness: 6px;
+
+                        &.first-hover {
+                            &::after {
+                                position: absolute;
+                                left: -5%;
+                                top: 30px;
+                                width: 110%;
+                                height: 8px;
+                                border-radius: 6px;
+                                background-color: variables.$yellow;
+                                opacity: 0.2;
+                                content: '';
+                                z-index: -1;
+                            }
+
+                            &:hover {
+                                &::after {
+                                    opacity: 1;
+                                }
                             }
                         }
 
-                        &.second-hover{
-                            &:hover{
-                                text-decoration: underline;
-                                text-decoration-color: variables.$red;
-                                text-decoration-thickness: 6px;
+                        &.second-hover {
+                            &::after {
+                                position: absolute;
+                                left: -5%;
+                                top: 30px;
+                                width: 110%;
+                                height: 8px;
+                                opacity: 0.2;
+                                border-radius: 6px;
+                                background-color: variables.$red;
+                                content: '';
+                                z-index: -1;
                             }
+
+                            &:hover {
+                                &::after {
+                                    opacity: 1;
+                                }
+                            }
+
                         }
-                        
                     }
                 }
 
@@ -483,29 +513,32 @@
             list-style-type: none;
             margin: 0;
             padding: 0;
-            :hover{
+
+            :hover {
                 color: variables.$white;
             }
 
             li {
                 color: #458c7e;
                 margin: 0 2rem;
-                
+
             }
         }
 
-        .links{
+        .links {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 100px;
-            svg{
+
+            svg {
                 margin: 0 1rem;
-                :hover{
+
+                :hover {
                     fill: variables.$white;
                 }
             }
-           
+
         }
     }
 }
