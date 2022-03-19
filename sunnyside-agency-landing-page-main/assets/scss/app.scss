@@ -16,6 +16,9 @@
 
 /************************ Header **************************/
 #sunnyside-agency-landing {
+    a {
+        text-decoration: none;
+    }
     header {
         position: relative;
         background-image: url("../_images/mobile/image-header.jpg");
@@ -84,10 +87,6 @@
                     width: 150px;
                     height: 50px;
                     border-radius: 25px;
-                }
-
-                a {
-                    text-decoration: none;
                 }
             }
 
@@ -323,6 +322,7 @@
 
         .testimonals {
             padding-top: 15vh;
+
             [class^="col"] {
                 height: 40vh;
                 min-height: 360px;
@@ -366,17 +366,18 @@
                         }
                     }
 
-                    .desc{
-                        .name{
+                    .desc {
+                        .name {
                             text-align: center;
                             font-size: 1.8em;
                             font-weight: 900;
                             color: black;
                         }
-                        p{
-                           margin: 0;
-                           font-weight: bold;
-                           color: variables.$grey;
+
+                        p {
+                            margin: 0;
+                            font-weight: bold;
+                            color: variables.$grey;
                         }
                     }
                 }
@@ -387,10 +388,10 @@
             .testimonals {
                 padding-top: 15vh;
 
-                h4{
+                h4 {
                     font-size: 3em;
                 }
-                
+
                 .content {
                     padding: 40px;
 
@@ -398,8 +399,8 @@
                         margin-top: 50px;
                     }
 
-                    .desc{
-                        .name{
+                    .desc {
+                        .name {
                             padding-top: 40px;
                         }
                     }
@@ -407,22 +408,24 @@
             }
         }
 
-        .gallery{
+        .gallery {
             padding-top: 120px;
+
             [class^="col"] {
                 margin: 0;
                 padding: 0;
                 height: 40vh;
                 min-height: 250px;
             }
-            picture img{
+
+            picture img {
                 width: 100%;
                 height: 100%;
             }
         }
 
-        @media(min-width:768px){
-            .gallery{
+        @media(min-width:768px) {
+            .gallery {
                 [class^="col"] {
                     margin: 0;
                     padding: 0;
@@ -430,7 +433,7 @@
                     min-height: 200px;
                 }
             }
-            
+
         }
     }
 }
@@ -438,10 +441,43 @@
 /************************END MAIN ********************************/
 
 /************************* FOOTER **************************/
-#sunnyside-agency-landing{
-    footer{
-        height: 30vh;
+#sunnyside-agency-landing {
+    footer {
+        height: 20vh;
+        min-height: 350px;
         background-color: variables.$footer;
+
+        .title {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                color: #458c7e;
+                margin: 0 2rem;
+            }
+        }
+
+        .links{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            img{
+                margin: 0 1rem;
+            }
+           
+        }
     }
 }
 
