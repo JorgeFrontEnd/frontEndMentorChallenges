@@ -56,9 +56,8 @@
 }
 #sunnyside-agency-landing header nav .menu ::after {
   position: absolute;
-  top: -35px;
+  top: -40px;
   right: 0;
-  transform: translateX(-0.5px);
   width: 0;
   height: 0;
   content: "";
@@ -163,6 +162,9 @@
 
 /************************ END Header **************************/
 /************************ MAIN ********************************/
+#sunnyside-agency-landing main {
+  font-family: "Smooch";
+}
 #sunnyside-agency-landing main [class^=col] {
   margin: 0;
   padding: 0;
@@ -200,7 +202,7 @@
 }
 #sunnyside-agency-landing main .about .flex .content a {
   position: relative;
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: black;
   text-decoration: none;
   align-self: center;
@@ -247,7 +249,7 @@
   text-align: center;
 }
 #sunnyside-agency-landing main .about .flex2 .content2 h3 {
-  font-size: 3em;
+  font-size: 2em;
   font-weight: bold;
   line-height: 55px;
   padding-bottom: 20px;
@@ -294,10 +296,10 @@
   }
 }
 #sunnyside-agency-landing main .testimonals {
-  padding-top: 15vh;
+  padding-top: 100px;
 }
 #sunnyside-agency-landing main .testimonals [class^=col] {
-  height: 40vh;
+  height: 30vh;
   min-height: 360px;
 }
 #sunnyside-agency-landing main .testimonals .container-fluid {
@@ -309,7 +311,7 @@
   align-items: center;
   text-transform: uppercase;
   font-weight: bolder;
-  font-size: 2em;
+  font-size: 1.3em;
   color: #a7abae;
   padding-bottom: 20px;
 }
@@ -318,13 +320,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 45px;
+  padding: 25px;
+  height: auto;
 }
 #sunnyside-agency-landing main .testimonals .container-fluid .content p {
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: bold;
   text-align: center;
   margin-top: 30px;
+  color: #a7abae;
 }
 #sunnyside-agency-landing main .testimonals .container-fluid .content picture {
   text-align: center;
@@ -346,9 +350,6 @@
   color: #a7abae;
 }
 @media (min-width: 768px) {
-  #sunnyside-agency-landing main .testimonals {
-    padding-top: 15vh;
-  }
   #sunnyside-agency-landing main .testimonals h4 {
     font-size: 3em;
   }
@@ -362,9 +363,6 @@
     padding-top: 40px;
   }
 }
-#sunnyside-agency-landing main .gallery {
-  padding-top: 120px;
-}
 #sunnyside-agency-landing main .gallery [class^=col] {
   margin: 0;
   padding: 0;
@@ -376,6 +374,9 @@
   height: 100%;
 }
 @media (min-width: 768px) {
+  #sunnyside-agency-landing main .gallery {
+    padding-top: 120px;
+  }
   #sunnyside-agency-landing main .gallery [class^=col] {
     margin: 0;
     padding: 0;
@@ -387,6 +388,7 @@
 /************************END MAIN ********************************/
 /************************* FOOTER **************************/
 #sunnyside-agency-landing footer {
+  font-family: "Smooch";
   height: 20vh;
   min-height: 350px;
   background-color: #68cab6;
