@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@100&family=Smooch+Sans:wght@100&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Fraunces', serif;
+    font-family: 'Smooch Sans', sans-serif;
+}
