@@ -2,4 +2,4 @@
 
 ![Design preview for the Sunnyside agency landing page coding challenge](./design/desktop-preview.jpg)
 
-## Online preview : https://sunnyside-agency-landing-jorge-ramalhete.netlify.app
+### Online view : https://sunnyside-agency-landing-jorge-ramalhete.netlify.app
