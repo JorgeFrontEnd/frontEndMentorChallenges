@@ -24,7 +24,7 @@
                 <label for="bill">
                   Bill
                 </label>
-                <input id="bill" type="text" placeholder="0">
+                <input id="bill_input" type="text" value="" placeholder="0">
                 <div class="svg">
                   <svg xmlns="http://www.w3.org/2000/svg" width="11" height="17">
                     <path fill="#9EBBBD"
@@ -71,30 +71,41 @@
           <div class="result-container">
             <div class="row">
               <div class="col-6">
-                  <div class="tip-amount">
-                    Tip Amount
-                    <p> /person</p>
-                  </div>
-              </div>
-              <div class="col-6">
-                $0.00
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-                <div class="total">
-                  Total
-                  <p> /person</p>
+                <div class="result-title">
+                  Tip Amount
+                  <p> / person</p>
                 </div>
               </div>
               <div class="col-6">
-                $0.00
+                <div class="result-amount">
+                  <div id="tip-amount">
+                    $ 0.00
+                  </div>
+                </div>
               </div>
             </div>
             <div class="row">
-              <button id="" class="button-reset">
-                Reset
-              </button>
+              <div class="col-6">
+                <div class="result-title">
+                  Total
+                  <p> / person</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="result-amount">
+                  <div id="total-amount">
+                    $ 0.00
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="button-reset-container">
+                <button id="" class="button-reset">
+                  Reset
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -103,7 +114,7 @@
   </div>
 
 
-  <script src="./assets/script/app.js"></script>
+  <script src="./assets/_script/app.js"></script>
 
 </body>
 
