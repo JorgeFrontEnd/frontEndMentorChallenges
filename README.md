@@ -1,2 +1,2 @@
 # PersonalProjects
-Repositório com os meus projetos pessoais.
+Challenges from https://www.frontendmentor.io/challenges
