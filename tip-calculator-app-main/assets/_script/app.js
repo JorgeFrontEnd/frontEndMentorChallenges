@@ -4,14 +4,16 @@ let button_calc = document.getElementsByClassName('button-calc');
 let tip_amount = document.getElementById('tip_amount');
 let total_amount = document.getElementById('total_amount');
 let button_reset = document.getElementById('button_reset');
+let tip_amount_result;
+let tip_amount_rounded;
+let tip_percent;
 
-// tip amount = bill * tip
+// tip amount = bill * tip %
 
-function tipCalculator() {
+function displayCalc(tip_percent) {
 
-
-    let tip_amount_result = bill_input.value * 1;
-    let tip_amount_rounded = tip_amount_result.toFixed(2);
+    tip_amount_result = bill_input.value * tip_percent;
+    tip_amount_rounded = tip_amount_result.toFixed(2);
 
     $("#tip_amount").text(tip_amount_rounded);
 }
@@ -19,26 +21,29 @@ function tipCalculator() {
 $("#bill_input").on("change keyup paste", function () {
 
     if (bill_input.value > 0) {
-
-        tipCalculator();
-
+        displayCalc(1);
     }
 })
 
-// for(var i = 0; i < button_calc.length ; i++){
-//     button_calc[i].addEventListener("click", function(){    
-//         if(button_calc[0]){
-//             console.log(button_calc.value);
-//         }
-//     });
-// }
+button_calc[0].addEventListener("click", function () {
+    displayCalc(0.05);
+});
 
-// number_people_input.addEventListener("change", function(){
-//     if(number_people_input.value > 0){
+button_calc[1].addEventListener("click", function () {
+    displayCalc(0.10);
+});
 
-//         console.log("2 input")
-//     }
-// });
+button_calc[2].addEventListener("click", function () {
+    displayCalc(0.15);
+});
+
+button_calc[3].addEventListener("click", function () {
+    displayCalc(0.25);
+});
+
+button_calc[4].addEventListener("click", function () {
+    displayCalc(0.50);
+});
 
 button_reset.addEventListener("click", function () {
     tip_amount.innerHTML = "0.00";
