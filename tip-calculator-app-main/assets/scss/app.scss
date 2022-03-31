@@ -32,7 +32,7 @@ body {
 }
 
 #main .tip-calculator {
-    width: 992px;
+    min-width: 250px;
     height: auto;
     background-color: #fff;
     border-radius: 16px;
@@ -42,8 +42,6 @@ body {
     #main .tip-calculator {
         width: 992px;
         height: 500px;
-        background-color: #fff;
-        border-radius: 16px;
     }
 }
 
@@ -65,6 +63,9 @@ body {
     font-weight: bold;
     color: #fff;
     background-color: variables.$primary-green;
+    &:hover{
+        background-color: variables.$secondary-green; 
+    }
 }
 
 #main .tip-calculator .input-container .input .svg {
@@ -155,10 +156,13 @@ body {
     padding: 10px;
     font-size: 32px;
     font-weight: bold;
-    background-color: variables.$secondary-green;
+    background-color: hsl(172, 71%, 29%);
     color: variables.$primary-green;
     border-radius: 4px;
     border: 0;
+    &:hover{
+        background-color: variables.$secondary-green; 
+    }
 }
 
 @media(min-width:767px){
