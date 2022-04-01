@@ -25,7 +25,6 @@ function displayCalc(tip_percent) {
 }
 
 $("#bill_input").on("click change keyup paste", function () {
-
     if (button_value_compressed != undefined) {
         displayCalc(button_value_compressed);
     } else if (custom_amount_value != undefined) {
