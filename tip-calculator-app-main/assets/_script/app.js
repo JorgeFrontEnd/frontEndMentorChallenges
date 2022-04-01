@@ -21,9 +21,17 @@ function displayCalc(tip_percent) {
 }
 
 $("#bill_input").on("change keyup paste", function () {
+    console.log("Button value",button_value_compressed);
     input_value_compressed = bill_input.value / bill_input.value;
+    if(button_value_compressed != undefined){
+        displayCalc(input_value_compressed);
+    }
     if (bill_input.value > 0) {
         displayCalc(input_value_compressed);
+    }
+    else{
+        tip_amount.innerHTML = "0.00";
+        total_amount.innerHTML = "0.00";
     }
 });3
 
