@@ -11,12 +11,12 @@ let bill_input = document.getElementById('bill_input'),
     tip_amount_result,
     tip_amount_rounded,
     tip_percent,
-    number_people = 0;
+    number_people;
 
 function displayCalc(tip_percent) {
 
     tip_amount_result = bill_input.value * tip_percent;
-    total_amount_result = parseFloat(bill_input.value) + parseFloat(tip_amount_result); 
+    total_amount_result = parseFloat(bill_input.value) + parseFloat(tip_amount_result);
     tip_amount_rounded = tip_amount_result.toFixed(2);
     total_amount_rounded = total_amount_result.toFixed(2);
 
@@ -25,7 +25,7 @@ function displayCalc(tip_percent) {
 }
 
 $("#bill_input").on("click change keyup paste", function () {
-    
+
     if (button_value_compressed != undefined) {
         displayCalc(button_value_compressed);
     } else if (custom_amount_value != undefined) {
@@ -70,7 +70,10 @@ button_calc[4].addEventListener("click", function () {
 
 $("#custom_amount").on("click change keyup paste", function () {
     custom_amount_value = custom_amount.value / 100;
-    if (bill_input.value > 0) {
+    if (bill_input.value == 0) {
+        tip_amount.innerHTML = "0.00";
+        total_amount.innerHTML = "0.00";
+    } else {
         displayCalc(custom_amount_value);
     }
 });
@@ -78,7 +81,6 @@ $("#custom_amount").on("click change keyup paste", function () {
 // $("#number_people_input").on("change keyup paste", function () {
 //     if (number_people_input.value > 0) {
 //         number_people == number_people_input.value;
-
 //     } else {
 //         console.log("Cant be Zero");
 //     }
