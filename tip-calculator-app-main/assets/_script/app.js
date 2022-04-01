@@ -87,6 +87,7 @@ $("#custom_amount").on("click change keyup paste", function () {
 button_reset.addEventListener("click", function () {
     tip_amount.innerHTML = "0.00";
     total_amount.innerHTML = "0.00";
+    custom_amount.value = '';
     button_value_compressed = '';
     bill_input.value = '';
     number_people_input.value = '';
