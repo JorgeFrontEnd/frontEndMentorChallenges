@@ -5,12 +5,12 @@ let custom_amount = document.getElementById('custom_amount');
 let tip_amount = document.getElementById('tip_amount');
 let total_amount = document.getElementById('total_amount');
 let button_reset = document.getElementById('button_reset');
+let input_value_compressed;
+let button_value_compressed;
 let tip_amount_result;
 let tip_amount_rounded;
 let tip_percent;
 let number_people = 0;
-
-// tip amount = bill * tip %
 
 function displayCalc(tip_percent) {
 
@@ -21,46 +21,38 @@ function displayCalc(tip_percent) {
 }
 
 $("#bill_input").on("change keyup paste", function () {
-
+    input_value_compressed = bill_input.value / bill_input.value;
     if (bill_input.value > 0) {
-        displayCalc(1);
+        displayCalc(input_value_compressed);
     }
-});
-
-$("#number_people_input").on("change keyup paste", function () {
-    if (bill_input.value > 0) {
-        displayCalc(1);
-    } else {
-        console.log("Cant be Zero");
-    }
-});
+});3
 
 button_calc[0].addEventListener("click", function () {
-    let button_value_compressed = button_calc[0].value.replace(/[^\d.-]/g, '');
+    button_value_compressed = button_calc[0].value.replace(/[^\d.-]/g, '');
     button_value_compressed = button_value_compressed / 100;
     displayCalc(button_value_compressed);
 });
 
 button_calc[1].addEventListener("click", function () {
-    let button_value_compressed = button_calc[1].value.replace(/[^\d.-]/g, '');
+    button_value_compressed = button_calc[1].value.replace(/[^\d.-]/g, '');
     button_value_compressed = button_value_compressed / 100;
     displayCalc(button_value_compressed);
 });
 
 button_calc[2].addEventListener("click", function () {
-    let button_value_compressed = button_calc[2].value.replace(/[^\d.-]/g, '');
+    button_value_compressed = button_calc[2].value.replace(/[^\d.-]/g, '');
     button_value_compressed = button_value_compressed / 100;
     displayCalc(button_value_compressed);
 });
 
 button_calc[3].addEventListener("click", function () {
-    let button_value_compressed = button_calc[3].value.replace(/[^\d.-]/g, '');
+    button_value_compressed = button_calc[3].value.replace(/[^\d.-]/g, '');
     button_value_compressed = button_value_compressed / 100;
     displayCalc(button_value_compressed);
 });
 
 button_calc[4].addEventListener("click", function () {
-    let button_value_compressed = button_calc[4].value.replace(/[^\d.-]/g, '');
+    button_value_compressed = button_calc[4].value.replace(/[^\d.-]/g, '');
     button_value_compressed = button_value_compressed / 100;
     displayCalc(button_value_compressed);
 });
@@ -69,6 +61,15 @@ $("#custom_amount").on("change keyup paste", function () {
     let custom_amount_value = custom_amount.value / 100;
     if (bill_input.value > 0) {
         displayCalc(custom_amount_value);
+    }
+});
+
+$("#number_people_input").on("change keyup paste", function () {
+    if (number_people_input.value > 0) {
+        number_people == number_people_input.value;
+
+    } else {
+        console.log("Cant be Zero");
     }
 });
 
