@@ -11,6 +11,7 @@ let bill_input = document.getElementById('bill_input'),
     tip_amount_result,
     tip_amount_rounded,
     tip_percent,
+    lastClickedElement,
     number_people;
 
 function displayCalc(tip_percent) {
@@ -20,11 +21,30 @@ function displayCalc(tip_percent) {
     tip_amount_rounded = tip_amount_result.toFixed(2);
     total_amount_rounded = total_amount_result.toFixed(2);
 
-    $("#tip_amount").text(tip_amount_rounded);
-    $("#total_amount").text(total_amount_rounded);
+    if (isNaN(total_amount_rounded)) {
+        total_amount_rounded == 0;
+    } else {
+        $("#tip_amount").text(tip_amount_rounded);
+        $("#total_amount").text(total_amount_rounded);
+    }
+}
+
+function getLastClicked(e) {
+    e = e || event;
+    $.lastClicked = e.target || e.srcElement;
+
+    lastClickedElement = $.lastClicked;
+}
+
+function compressButton(){
+    button_value_compressed = lastClickedElement.value.replace(/[^\d.-]/g, '');
+    button_value_compressed = button_value_compressed / 100;
 }
 
 $("#bill_input").on("click change keyup paste", function () {
+
+    console.log("lastclick", lastClickedElement);
+    console.log("button value", button_value_compressed)
     if (button_value_compressed != undefined) {
         displayCalc(button_value_compressed);
     } else if (custom_amount_value != undefined) {
@@ -37,43 +57,40 @@ $("#bill_input").on("click change keyup paste", function () {
     }
 });
 
-button_calc[0].addEventListener("click", function () {
-    button_value_compressed = button_calc[0].value.replace(/[^\d.-]/g, '');
-    button_value_compressed = button_value_compressed / 100;
-    displayCalc(button_value_compressed);
-});
-
-button_calc[1].addEventListener("click", function () {
-    button_value_compressed = button_calc[1].value.replace(/[^\d.-]/g, '');
-    button_value_compressed = button_value_compressed / 100;
-    displayCalc(button_value_compressed);
-});
-
-button_calc[2].addEventListener("click", function () {
-    button_value_compressed = button_calc[2].value.replace(/[^\d.-]/g, '');
-    button_value_compressed = button_value_compressed / 100;
-    displayCalc(button_value_compressed);
-});
-
-button_calc[3].addEventListener("click", function () {
-    button_value_compressed = button_calc[3].value.replace(/[^\d.-]/g, '');
-    button_value_compressed = button_value_compressed / 100;
-    displayCalc(button_value_compressed);
-});
-
-button_calc[4].addEventListener("click", function () {
-    button_value_compressed = button_calc[4].value.replace(/[^\d.-]/g, '');
-    button_value_compressed = button_value_compressed / 100;
-    displayCalc(button_value_compressed);
-});
-
-$("#custom_amount").on("click change keyup paste", function () {
-    custom_amount_value = custom_amount.value / 100;
-    if (bill_input.value == 0) {
-        tip_amount.innerHTML = "0.00";
-        total_amount.innerHTML = "0.00";
-    } else {
-        displayCalc(custom_amount_value);
+$('#grid').click(function () {
+    getLastClicked();
+    switch (lastClickedElement.value) {
+        case "5%":
+            compressButton();
+            displayCalc(button_value_compressed);
+            break;
+        case "10%":
+            compressButton();
+            displayCalc(button_value_compressed);
+            break;
+        case "15%":
+            compressButton();
+            displayCalc(button_value_compressed);
+            break;
+        case "25%":
+            compressButton();
+            displayCalc(button_value_compressed);
+            break;
+        case "50%":
+            compressButton();
+            displayCalc(button_value_compressed);
+            break;
+        default:
+            $("#custom_amount").on("click change keyup paste", function () {
+                custom_amount_value = custom_amount.value / 100;
+                if (bill_input.value == 0) {
+                    tip_amount.innerHTML = "0.00";
+                    total_amount.innerHTML = "0.00";
+                } else {
+                    displayCalc(custom_amount_value);
+                }
+            });
+            break;
     }
 });
 
