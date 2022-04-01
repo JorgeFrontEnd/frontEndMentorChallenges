@@ -7,6 +7,7 @@ let total_amount = document.getElementById('total_amount');
 let button_reset = document.getElementById('button_reset');
 let input_value_compressed;
 let button_value_compressed;
+let custom_amount_value;
 let tip_amount_result;
 let tip_amount_rounded;
 let tip_percent;
@@ -20,20 +21,19 @@ function displayCalc(tip_percent) {
     $("#tip_amount").text(tip_amount_rounded);
 }
 
-$("#bill_input").on("change keyup paste", function () {
-    console.log("Button value",button_value_compressed);
-    input_value_compressed = bill_input.value / bill_input.value;
-    if(button_value_compressed != undefined){
-        displayCalc(input_value_compressed);
-    }
-    if (bill_input.value > 0) {
-        displayCalc(input_value_compressed);
-    }
-    else{
+$("#bill_input").on("click change keyup paste", function () {
+    if (button_value_compressed != undefined) {
+        displayCalc(button_value_compressed);
+    } else if (custom_amount_value != undefined) {
+        displayCalc(custom_amount_value);
+    } else if (bill_input.value == 0) {
         tip_amount.innerHTML = "0.00";
         total_amount.innerHTML = "0.00";
+    } else {
+        input_value_compressed = bill_input.value / bill_input.value;
+        displayCalc(input_value_compressed);
     }
-});3
+});
 
 button_calc[0].addEventListener("click", function () {
     button_value_compressed = button_calc[0].value.replace(/[^\d.-]/g, '');
@@ -65,25 +65,26 @@ button_calc[4].addEventListener("click", function () {
     displayCalc(button_value_compressed);
 });
 
-$("#custom_amount").on("change keyup paste", function () {
-    let custom_amount_value = custom_amount.value / 100;
+$("#custom_amount").on("click change keyup paste", function () {
+    custom_amount_value = custom_amount.value / 100;
     if (bill_input.value > 0) {
         displayCalc(custom_amount_value);
     }
 });
 
-$("#number_people_input").on("change keyup paste", function () {
-    if (number_people_input.value > 0) {
-        number_people == number_people_input.value;
+// $("#number_people_input").on("change keyup paste", function () {
+//     if (number_people_input.value > 0) {
+//         number_people == number_people_input.value;
 
-    } else {
-        console.log("Cant be Zero");
-    }
-});
+//     } else {
+//         console.log("Cant be Zero");
+//     }
+// });
 
 button_reset.addEventListener("click", function () {
     tip_amount.innerHTML = "0.00";
     total_amount.innerHTML = "0.00";
+    button_value_compressed = '';
     bill_input.value = '';
     number_people_input.value = '';
 });
