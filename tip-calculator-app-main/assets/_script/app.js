@@ -1,17 +1,17 @@
-let bill_input = document.getElementById('bill_input');
-let number_people_input = document.getElementById('number_people_input');
-let button_calc = document.getElementsByClassName('button-calc');
-let custom_amount = document.getElementById('custom_amount');
-let tip_amount = document.getElementById('tip_amount');
-let total_amount = document.getElementById('total_amount');
-let button_reset = document.getElementById('button_reset');
-let input_value_compressed;
-let button_value_compressed;
-let custom_amount_value;
-let tip_amount_result;
-let tip_amount_rounded;
-let tip_percent;
-let number_people = 0;
+let bill_input = document.getElementById('bill_input'),
+number_people_input = document.getElementById('number_people_input'),
+button_calc = document.getElementsByClassName('button-calc'),
+custom_amount = document.getElementById('custom_amount'),
+tip_amount = document.getElementById('tip_amount'),
+total_amount = document.getElementById('total_amount'),
+button_reset = document.getElementById('button_reset'),
+input_value_compressed,
+button_value_compressed,
+custom_amount_value,
+tip_amount_result,
+tip_amount_rounded,
+tip_percent,
+number_people = 0;
 
 function displayCalc(tip_percent) {
 
