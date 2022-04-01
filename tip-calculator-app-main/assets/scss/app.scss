@@ -53,6 +53,7 @@ body {
 }
 
 #main .tip-calculator .input-container .input {
+    font-family: 'Fraunces', serif;
     position: relative;
     margin-bottom: 35px;
 }
@@ -120,6 +121,7 @@ body {
 
 
 #main .tip-calculator .result-container .result-title{
+    font-family: 'Fraunces', serif;
     display: flex;
     flex-direction:column;
     align-items: flex-start;
@@ -133,6 +135,7 @@ body {
 }
 
 #main .tip-calculator .result-container .result-amount{
+    font-family: 'Fraunces', serif;
     font-size: 60px;
     color: variables.$secondary-green;
     display: flex;
@@ -145,9 +148,11 @@ body {
         width: 30px;
         height: 100%;
     }
+
 }
 
 #main .tip-calculator .result-container .button-reset-container{
+    font-family: 'Fraunces', serif;
     display: flex;
     align-items: flex-end;
 }

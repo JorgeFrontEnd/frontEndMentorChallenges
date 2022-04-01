@@ -1,17 +1,17 @@
 let bill_input = document.getElementById('bill_input'),
-number_people_input = document.getElementById('number_people_input'),
-button_calc = document.getElementsByClassName('button-calc'),
-custom_amount = document.getElementById('custom_amount'),
-tip_amount = document.getElementById('tip_amount'),
-total_amount = document.getElementById('total_amount'),
-button_reset = document.getElementById('button_reset'),
-input_value_compressed,
-button_value_compressed,
-custom_amount_value,
-tip_amount_result,
-tip_amount_rounded,
-tip_percent,
-number_people = 0;
+    number_people_input = document.getElementById('number_people_input'),
+    button_calc = document.getElementsByClassName('button-calc'),
+    custom_amount = document.getElementById('custom_amount'),
+    tip_amount = document.getElementById('tip_amount'),
+    total_amount = document.getElementById('total_amount'),
+    button_reset = document.getElementById('button_reset'),
+    input_value_compressed,
+    button_value_compressed,
+    custom_amount_value,
+    tip_amount_result,
+    tip_amount_rounded,
+    tip_percent,
+    number_people = 0;
 
 function displayCalc(tip_percent) {
 
@@ -22,6 +22,7 @@ function displayCalc(tip_percent) {
 }
 
 $("#bill_input").on("click change keyup paste", function () {
+    
     if (button_value_compressed != undefined) {
         displayCalc(button_value_compressed);
     } else if (custom_amount_value != undefined) {
