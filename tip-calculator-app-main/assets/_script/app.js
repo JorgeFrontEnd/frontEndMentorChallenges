@@ -16,9 +16,12 @@ let bill_input = document.getElementById('bill_input'),
 function displayCalc(tip_percent) {
 
     tip_amount_result = bill_input.value * tip_percent;
+    total_amount_result = parseFloat(bill_input.value) + parseFloat(tip_amount_result); 
     tip_amount_rounded = tip_amount_result.toFixed(2);
+    total_amount_rounded = total_amount_result.toFixed(2);
 
     $("#tip_amount").text(tip_amount_rounded);
+    $("#total_amount").text(total_amount_rounded);
 }
 
 $("#bill_input").on("click change keyup paste", function () {
@@ -31,8 +34,7 @@ $("#bill_input").on("click change keyup paste", function () {
         tip_amount.innerHTML = "0.00";
         total_amount.innerHTML = "0.00";
     } else {
-        input_value_compressed = bill_input.value / bill_input.value;
-        displayCalc(input_value_compressed);
+        displayCalc(0);
     }
 });
 
