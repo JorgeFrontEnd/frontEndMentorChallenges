@@ -21,7 +21,6 @@ function displayCalc(tip_percent) {
     tip_amount_rounded = tip_amount_result.toFixed(2);
     total_amount_rounded = total_amount_result.toFixed(2);
 
-
     if (isNaN(total_amount_rounded)) {
         total_amount_rounded == 0;
     } else {
@@ -38,14 +37,15 @@ function getLastClicked(e) {
     lastClickedElement = $.lastClicked;
 }
 
-function compressButton(){
+function compressButton() {
     button_value_compressed = lastClickedElement.value.replace(/[^\d.-]/g, '');
     button_value_compressed = button_value_compressed / 100;
 }
 
+customValue();
+
 $("#bill_input").on("click change keyup paste", function () {
 
-    // console.log("lastclick", lastClickedElement.classList.contains('button-calc'));
     if (button_value_compressed != undefined && lastClickedElement.classList.contains('button-calc')) {
         displayCalc(button_value_compressed);
     } else if (custom_amount_value != undefined) {
@@ -58,51 +58,98 @@ $("#bill_input").on("click change keyup paste", function () {
     }
 });
 
+function activeButton() {
+    if(lastClickedElement == button_calc[0]){
+        button_calc[0].classList.add('active');
+        button_calc[1].classList.remove('active');
+        button_calc[2].classList.remove('active');
+        button_calc[3].classList.remove('active');
+        button_calc[4].classList.remove('active');
+    }
+    if(lastClickedElement == button_calc[1]){
+        button_calc[1].classList.add('active');
+        button_calc[0].classList.remove('active');
+        button_calc[2].classList.remove('active');
+        button_calc[3].classList.remove('active');
+        button_calc[4].classList.remove('active');
+    }
+    if(lastClickedElement == button_calc[2]){
+        button_calc[2].classList.add('active');
+        button_calc[0].classList.remove('active');
+        button_calc[1].classList.remove('active');
+        button_calc[3].classList.remove('active');
+        button_calc[4].classList.remove('active');
+    }
+    if(lastClickedElement == button_calc[3]){
+        button_calc[3].classList.add('active');
+        button_calc[0].classList.remove('active');
+        button_calc[1].classList.remove('active');
+        button_calc[2].classList.remove('active');
+        button_calc[4].classList.remove('active');
+    }
+    if(lastClickedElement == button_calc[4]){
+        button_calc[4].classList.add('active');
+        button_calc[0].classList.remove('active');
+        button_calc[1].classList.remove('active');
+        button_calc[2].classList.remove('active');
+        button_calc[3].classList.remove('active');
+    }
+     
+}
 $('#grid').click(function () {
     getLastClicked();
     switch (lastClickedElement.value) {
         case "5%":
+            activeButton();
             compressButton();
             displayCalc(button_value_compressed);
             break;
         case "10%":
+            activeButton();
             compressButton();
             displayCalc(button_value_compressed);
             break;
         case "15%":
+            activeButton();
             compressButton();
             displayCalc(button_value_compressed);
             break;
         case "25%":
+            activeButton();
             compressButton();
             displayCalc(button_value_compressed);
             break;
         case "50%":
+            activeButton();
             compressButton();
             displayCalc(button_value_compressed);
             break;
         default:
-            $("#custom_amount").on("click change keyup paste", function () {
-                custom_amount_value = custom_amount.value / 100;
-                if (bill_input.value == 0) {
-                    tip_amount.innerHTML = "0.00";
-                    total_amount.innerHTML = "0.00";
-                } else {
-                    displayCalc(custom_amount_value);
-                }
-            });
+            customValue();
             break;
     }
 });
 
-$("#number_people_input").on("change keyup paste", function () {
+$("#number_people_input").on("click change keyup paste", function () {
     if (number_people_input.value > 0) {
         console.log(number_people_input.value);
-        
+
     } else {
         console.log("Cant be Zero");
     }
 });
+
+function customValue(){
+    $("#custom_amount").on("click change keyup paste", function () {
+        custom_amount_value = custom_amount.value / 100;
+        if (bill_input.value == 0) {
+            tip_amount.innerHTML = "0.00";
+            total_amount.innerHTML = "0.00";
+        } else {
+            displayCalc(custom_amount_value);
+        }
+    });   
+}
 
 button_reset.addEventListener("click", function () {
     tip_amount.innerHTML = "0.00";

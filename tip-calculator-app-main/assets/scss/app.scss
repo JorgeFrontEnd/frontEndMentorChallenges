@@ -75,6 +75,9 @@ body {
     &:hover{
         background-color: variables.$secondary-green; 
     }
+    &.active{
+        background-color: variables.$secondary-green;
+    }
 }
 
 #main .tip-calculator .input-container .input .svg {
