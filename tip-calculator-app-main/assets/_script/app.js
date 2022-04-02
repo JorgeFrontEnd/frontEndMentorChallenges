@@ -21,6 +21,7 @@ function displayCalc(tip_percent) {
     tip_amount_rounded = tip_amount_result.toFixed(2);
     total_amount_rounded = total_amount_result.toFixed(2);
 
+
     if (isNaN(total_amount_rounded)) {
         total_amount_rounded == 0;
     } else {
@@ -28,6 +29,7 @@ function displayCalc(tip_percent) {
         $("#total_amount").text(total_amount_rounded);
     }
 }
+
 
 function getLastClicked(e) {
     e = e || event;
@@ -43,9 +45,8 @@ function compressButton(){
 
 $("#bill_input").on("click change keyup paste", function () {
 
-    console.log("lastclick", lastClickedElement);
-    console.log("button value", button_value_compressed)
-    if (button_value_compressed != undefined) {
+    // console.log("lastclick", lastClickedElement.classList.contains('button-calc'));
+    if (button_value_compressed != undefined && lastClickedElement.classList.contains('button-calc')) {
         displayCalc(button_value_compressed);
     } else if (custom_amount_value != undefined) {
         displayCalc(custom_amount_value);
@@ -94,13 +95,14 @@ $('#grid').click(function () {
     }
 });
 
-// $("#number_people_input").on("change keyup paste", function () {
-//     if (number_people_input.value > 0) {
-//         number_people == number_people_input.value;
-//     } else {
-//         console.log("Cant be Zero");
-//     }
-// });
+$("#number_people_input").on("change keyup paste", function () {
+    if (number_people_input.value > 0) {
+        console.log(number_people_input.value);
+        
+    } else {
+        console.log("Cant be Zero");
+    }
+});
 
 button_reset.addEventListener("click", function () {
     tip_amount.innerHTML = "0.00";

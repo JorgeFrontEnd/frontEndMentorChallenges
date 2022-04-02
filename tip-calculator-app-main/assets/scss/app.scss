@@ -56,6 +56,14 @@ body {
     font-family: 'Fraunces', serif;
     position: relative;
     margin-bottom: 35px;
+
+    span{
+        color: red;
+        position: absolute;
+        top: 0;
+        right: 0;
+        // display: none;
+    }
 }
 
 #main .tip-calculator .input-container .input .button-calc{

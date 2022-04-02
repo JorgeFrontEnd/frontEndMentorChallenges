@@ -52,6 +52,12 @@ body {
   position: relative;
   margin-bottom: 35px;
 }
+#main .tip-calculator .input-container .input span {
+  color: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 #main .tip-calculator .input-container .input .button-calc {
   border: 0;
