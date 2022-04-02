@@ -5,19 +5,18 @@ let bill_input = document.getElementById('bill_input'),
     tip_amount = document.getElementById('tip_amount'),
     total_amount = document.getElementById('total_amount'),
     button_reset = document.getElementById('button_reset'),
-    input_value_compressed,
     button_value_compressed,
     custom_amount_value,
     tip_amount_result,
     tip_amount_rounded,
     tip_percent,
     lastClickedElement,
-    number_people;
+    number_people = 1;
 
-function displayCalc(tip_percent) {
+function displayCalc(tip_percent,number_people) {
 
-    tip_amount_result = bill_input.value * tip_percent;
-    total_amount_result = parseFloat(bill_input.value) + parseFloat(tip_amount_result);
+    tip_amount_result = bill_input.value * tip_percent / number_people;
+    total_amount_result = parseFloat(bill_input.value / number_people) + parseFloat(tip_amount_result);
     tip_amount_rounded = tip_amount_result.toFixed(2);
     total_amount_rounded = total_amount_result.toFixed(2);
 
@@ -29,7 +28,6 @@ function displayCalc(tip_percent) {
     }
 }
 
-
 function getLastClicked(e) {
     e = e || event;
     $.lastClicked = e.target || e.srcElement;
@@ -40,6 +38,7 @@ function getLastClicked(e) {
 function compressButton() {
     button_value_compressed = lastClickedElement.value.replace(/[^\d.-]/g, '');
     button_value_compressed = button_value_compressed / 100;
+    tip_percent = button_value_compressed;
 }
 
 function customValue() {
@@ -49,7 +48,8 @@ function customValue() {
             tip_amount.innerHTML = "0.00";
             total_amount.innerHTML = "0.00";
         } else {
-            displayCalc(custom_amount_value);
+            displayCalc(custom_amount_value,number_people);
+            tip_percent = custom_amount_value;
         }
     });
 }
@@ -59,14 +59,14 @@ customValue();
 $("#bill_input").on("click change keyup paste", function () {
 
     if (button_value_compressed != undefined && lastClickedElement.classList.contains('button-calc')) {
-        displayCalc(button_value_compressed);
+        displayCalc(button_value_compressed,number_people);
     } else if (custom_amount_value != undefined) {
-        displayCalc(custom_amount_value);
+        displayCalc(custom_amount_value,number_people);
     } else if (bill_input.value == 0) {
         tip_amount.innerHTML = "0.00";
         total_amount.innerHTML = "0.00";
     } else {
-        displayCalc(0);
+        displayCalc(0,number_people);
     }
 });
 
@@ -80,7 +80,7 @@ $('#grid').click(function () {
             button_calc[3].classList.remove('active');
             button_calc[4].classList.remove('active');
             compressButton();
-            displayCalc(button_value_compressed);
+            displayCalc(button_value_compressed,number_people);
             break;
         case "10%":
             button_calc[1].classList.add('active');
@@ -89,7 +89,7 @@ $('#grid').click(function () {
             button_calc[3].classList.remove('active');
             button_calc[4].classList.remove('active');
             compressButton();
-            displayCalc(button_value_compressed);
+            displayCalc(button_value_compressed,number_people);
             break;
         case "15%":
             button_calc[2].classList.add('active');
@@ -98,7 +98,7 @@ $('#grid').click(function () {
             button_calc[3].classList.remove('active');
             button_calc[4].classList.remove('active');
             compressButton();
-            displayCalc(button_value_compressed);
+            displayCalc(button_value_compressed,number_people);
             break;
         case "25%":
             button_calc[3].classList.add('active');
@@ -107,7 +107,7 @@ $('#grid').click(function () {
             button_calc[2].classList.remove('active');
             button_calc[4].classList.remove('active');
             compressButton();
-            displayCalc(button_value_compressed);
+            displayCalc(button_value_compressed,number_people);
             break;
         case "50%":
             button_calc[4].classList.add('active');
@@ -116,7 +116,7 @@ $('#grid').click(function () {
             button_calc[2].classList.remove('active');
             button_calc[3].classList.remove('active');
             compressButton();
-            displayCalc(button_value_compressed);
+            displayCalc(button_value_compressed,number_people);
             break;
         default:
             button_calc[0].classList.remove('active');
@@ -131,7 +131,9 @@ $('#grid').click(function () {
 
 $("#number_people_input").on("click change keyup paste", function () {
     if (number_people_input.value > 0) {
-        console.log(number_people_input.value);
+        number_people = number_people_input.value;
+        console.log(tip_percent);
+        displayCalc(tip_percent,number_people)
         document.getElementById('unvailable').style.display = "none";
     } else {
         document.getElementById('unvailable').style.display = "block";
