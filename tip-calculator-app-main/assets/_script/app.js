@@ -42,46 +42,7 @@ function compressButton() {
     button_value_compressed = button_value_compressed / 100;
 }
 
-/* Repensar melhor forma de fazer esta função */
-function activeButton() {
-    if(lastClickedElement == button_calc[0]){
-        button_calc[0].classList.add('active');
-        button_calc[1].classList.remove('active');
-        button_calc[2].classList.remove('active');
-        button_calc[3].classList.remove('active');
-        button_calc[4].classList.remove('active');
-    }
-    if(lastClickedElement == button_calc[1]){
-        button_calc[1].classList.add('active');
-        button_calc[0].classList.remove('active');
-        button_calc[2].classList.remove('active');
-        button_calc[3].classList.remove('active');
-        button_calc[4].classList.remove('active');
-    }
-    if(lastClickedElement == button_calc[2]){
-        button_calc[2].classList.add('active');
-        button_calc[0].classList.remove('active');
-        button_calc[1].classList.remove('active');
-        button_calc[3].classList.remove('active');
-        button_calc[4].classList.remove('active');
-    }
-    if(lastClickedElement == button_calc[3]){
-        button_calc[3].classList.add('active');
-        button_calc[0].classList.remove('active');
-        button_calc[1].classList.remove('active');
-        button_calc[2].classList.remove('active');
-        button_calc[4].classList.remove('active');
-    }
-    if(lastClickedElement == button_calc[4]){
-        button_calc[4].classList.add('active');
-        button_calc[0].classList.remove('active');
-        button_calc[1].classList.remove('active');
-        button_calc[2].classList.remove('active');
-        button_calc[3].classList.remove('active');
-    } 
-}
-
-function customValue(){
+function customValue() {
     $("#custom_amount").on("click change keyup paste", function () {
         custom_amount_value = custom_amount.value / 100;
         if (bill_input.value == 0) {
@@ -90,7 +51,7 @@ function customValue(){
         } else {
             displayCalc(custom_amount_value);
         }
-    });   
+    });
 }
 
 customValue();
@@ -113,31 +74,57 @@ $('#grid').click(function () {
     getLastClicked();
     switch (lastClickedElement.value) {
         case "5%":
-            activeButton();
+            button_calc[0].classList.add('active');
+            button_calc[1].classList.remove('active');
+            button_calc[2].classList.remove('active');
+            button_calc[3].classList.remove('active');
+            button_calc[4].classList.remove('active');
             compressButton();
             displayCalc(button_value_compressed);
             break;
         case "10%":
-            activeButton();
+            button_calc[1].classList.add('active');
+            button_calc[0].classList.remove('active');
+            button_calc[2].classList.remove('active');
+            button_calc[3].classList.remove('active');
+            button_calc[4].classList.remove('active');
             compressButton();
             displayCalc(button_value_compressed);
             break;
         case "15%":
-            activeButton();
+            button_calc[2].classList.add('active');
+            button_calc[0].classList.remove('active');
+            button_calc[1].classList.remove('active');
+            button_calc[3].classList.remove('active');
+            button_calc[4].classList.remove('active');
             compressButton();
             displayCalc(button_value_compressed);
             break;
         case "25%":
-            activeButton();
+            button_calc[3].classList.add('active');
+            button_calc[0].classList.remove('active');
+            button_calc[1].classList.remove('active');
+            button_calc[2].classList.remove('active');
+            button_calc[4].classList.remove('active');
             compressButton();
             displayCalc(button_value_compressed);
             break;
         case "50%":
-            activeButton();
+            button_calc[4].classList.add('active');
+            button_calc[0].classList.remove('active');
+            button_calc[1].classList.remove('active');
+            button_calc[2].classList.remove('active');
+            button_calc[3].classList.remove('active');
             compressButton();
             displayCalc(button_value_compressed);
             break;
         default:
+            custom_amount.classList.add('active');
+            button_calc[0].classList.remove('active');
+            button_calc[1].classList.remove('active');
+            button_calc[2].classList.remove('active');
+            button_calc[3].classList.remove('active');
+            button_calc[4].classList.remove('active');
             customValue();
             break;
     }
