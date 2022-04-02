@@ -119,7 +119,6 @@ $('#grid').click(function () {
             displayCalc(button_value_compressed);
             break;
         default:
-            custom_amount.classList.add('active');
             button_calc[0].classList.remove('active');
             button_calc[1].classList.remove('active');
             button_calc[2].classList.remove('active');
