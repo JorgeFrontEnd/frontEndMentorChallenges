@@ -57,6 +57,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  display: none;
 }
 
 #main .tip-calculator .input-container .input .button-calc {

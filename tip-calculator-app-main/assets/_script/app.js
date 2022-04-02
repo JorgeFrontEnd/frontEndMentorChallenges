@@ -42,22 +42,7 @@ function compressButton() {
     button_value_compressed = button_value_compressed / 100;
 }
 
-customValue();
-
-$("#bill_input").on("click change keyup paste", function () {
-
-    if (button_value_compressed != undefined && lastClickedElement.classList.contains('button-calc')) {
-        displayCalc(button_value_compressed);
-    } else if (custom_amount_value != undefined) {
-        displayCalc(custom_amount_value);
-    } else if (bill_input.value == 0) {
-        tip_amount.innerHTML = "0.00";
-        total_amount.innerHTML = "0.00";
-    } else {
-        displayCalc(0);
-    }
-});
-
+/* Repensar melhor forma de fazer esta função */
 function activeButton() {
     if(lastClickedElement == button_calc[0]){
         button_calc[0].classList.add('active');
@@ -93,9 +78,37 @@ function activeButton() {
         button_calc[1].classList.remove('active');
         button_calc[2].classList.remove('active');
         button_calc[3].classList.remove('active');
-    }
-     
+    } 
 }
+
+function customValue(){
+    $("#custom_amount").on("click change keyup paste", function () {
+        custom_amount_value = custom_amount.value / 100;
+        if (bill_input.value == 0) {
+            tip_amount.innerHTML = "0.00";
+            total_amount.innerHTML = "0.00";
+        } else {
+            displayCalc(custom_amount_value);
+        }
+    });   
+}
+
+customValue();
+
+$("#bill_input").on("click change keyup paste", function () {
+
+    if (button_value_compressed != undefined && lastClickedElement.classList.contains('button-calc')) {
+        displayCalc(button_value_compressed);
+    } else if (custom_amount_value != undefined) {
+        displayCalc(custom_amount_value);
+    } else if (bill_input.value == 0) {
+        tip_amount.innerHTML = "0.00";
+        total_amount.innerHTML = "0.00";
+    } else {
+        displayCalc(0);
+    }
+});
+
 $('#grid').click(function () {
     getLastClicked();
     switch (lastClickedElement.value) {
@@ -133,23 +146,11 @@ $('#grid').click(function () {
 $("#number_people_input").on("click change keyup paste", function () {
     if (number_people_input.value > 0) {
         console.log(number_people_input.value);
-
+        document.getElementById('unvailable').style.display = "none";
     } else {
-        console.log("Cant be Zero");
+        document.getElementById('unvailable').style.display = "block";
     }
 });
-
-function customValue(){
-    $("#custom_amount").on("click change keyup paste", function () {
-        custom_amount_value = custom_amount.value / 100;
-        if (bill_input.value == 0) {
-            tip_amount.innerHTML = "0.00";
-            total_amount.innerHTML = "0.00";
-        } else {
-            displayCalc(custom_amount_value);
-        }
-    });   
-}
 
 button_reset.addEventListener("click", function () {
     tip_amount.innerHTML = "0.00";
