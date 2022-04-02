@@ -36,7 +36,7 @@ body {
 
 @media (min-width: 767px) {
   #main .tip-calculator {
-    width: 992px;
+    width: 1280px;
     height: 500px;
   }
 }
@@ -116,6 +116,7 @@ body {
   }
 }
 #main .tip-calculator .result-container {
+  position: relative;
   background-color: #00494d;
   margin: 20px;
   padding: 30px;
@@ -126,10 +127,10 @@ body {
   font-family: "Fraunces", serif;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  font-size: 22px;
   color: #fff;
-  margin-top: 25px;
+}
+#main .tip-calculator .result-container .result-title h5 {
+  font-size: 22px;
 }
 #main .tip-calculator .result-container .result-title p {
   color: #5e7a7d;
@@ -137,18 +138,15 @@ body {
 }
 
 #main .tip-calculator .result-container .result-amount {
+  position: relative;
+  bottom: 20px;
   font-family: "Fraunces", serif;
   font-size: 60px;
   color: #26c0ab;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: center;
-}
-#main .tip-calculator .result-container .result-amount img {
-  margin: 10px;
-  width: 30px;
-  height: 100%;
+  overflow-x: hidden;
 }
 
 #main .tip-calculator .result-container .button-reset-container {

@@ -40,7 +40,7 @@ body {
 
 @media (min-width:767px) {
     #main .tip-calculator {
-        width: 992px;
+        width: 1280px;
         height: 500px;
     }
 }
@@ -49,7 +49,7 @@ body {
     padding: 30px;
     height: 100%;
     border-radius: 16px;
-    color: hsl(184, 14%, 56%);
+    color: variables.$input-container;
 }
 
 #main .tip-calculator .input-container .input {
@@ -124,21 +124,22 @@ body {
 
 
 #main .tip-calculator .result-container {
+    position: relative;
     background-color: variables.$primary-green;
     margin: 20px;
     padding: 30px;
     border-radius: 16px;
 }
 
-
 #main .tip-calculator .result-container .result-title{
     font-family: 'Fraunces', serif;
     display: flex;
     flex-direction:column;
-    align-items: flex-start;
-    font-size: 22px;
     color: #fff;
-    margin-top: 25px;
+    h5{
+        font-size: 22px;
+    }
+
     p{
         color: hsl(186, 14%, 43%);
         font-size: 20px;
@@ -146,20 +147,15 @@ body {
 }
 
 #main .tip-calculator .result-container .result-amount{
+    position: relative;
+    bottom: 20px;
     font-family: 'Fraunces', serif;
     font-size: 60px;
     color: variables.$secondary-green;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: center;
-
-    img{
-        margin: 10px;
-        width: 30px;
-        height: 100%;
-    }
-
+    overflow-x: hidden;
 }
 
 #main .tip-calculator .result-container .button-reset-container{

@@ -43,6 +43,7 @@ function compressButton() {
 
 function customValue() {
     $("#custom_amount").on("click change keyup paste", function () {
+
         custom_amount_value = custom_amount.value / 100;
         if (bill_input.value == 0) {
             tip_amount.innerHTML = "0.00";
@@ -56,7 +57,13 @@ function customValue() {
 
 customValue();
 
-$("#bill_input").on("click change keyup paste", function () {
+$("#bill_input").on("click change keydown keyup paste", function () {
+
+    console.log(bill_input.value.lenght)
+    if(bill_input.value.lenght == 3){
+        console.log("ENTREI NO IF")
+        // document.getElementsByClassName('result-amount').style.fontSize = "30px";
+    }
 
     if (button_value_compressed != undefined && lastClickedElement.classList.contains('button-calc')) {
         displayCalc(button_value_compressed,number_people);
@@ -132,7 +139,6 @@ $('#grid').click(function () {
 $("#number_people_input").on("click change keyup paste", function () {
     if (number_people_input.value > 0) {
         number_people = number_people_input.value;
-        console.log(tip_percent);
         displayCalc(tip_percent,number_people)
         document.getElementById('unvailable').style.display = "none";
     } else {
