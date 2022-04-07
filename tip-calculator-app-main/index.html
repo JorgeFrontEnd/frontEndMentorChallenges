@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/css/app.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
   <link rel="shortcut icon" href="./assets/_images/favicon-32x32.png" type="image/x-icon">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -55,7 +55,6 @@
               <div class="input">
                 <label for="number_people_input">
                   Number of People
-                  <span id="unvailable">Cant be Zero</span>
                 </label>
                 <input id="number_people_input" type="number" value="" placeholder="0">
                 <div class="svg">
@@ -65,8 +64,6 @@
                   </svg>
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
@@ -82,7 +79,7 @@
               <div class="col-8">
                 <div class="result-amount">
                   <div id="tip_amount">
-                     0.00
+                    0.00
                   </div>
                 </div>
               </div>
@@ -104,11 +101,9 @@
               </div>
             </div>
             <div class="row">
-              <div class="button-reset-container">
-                <button id="button_reset" class="button-reset">
-                  Reset
-                </button>
-              </div>
+              <button id="button_reset" class="button-reset">
+                Reset
+              </button>
             </div>
           </div>
         </div>

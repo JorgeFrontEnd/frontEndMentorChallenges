@@ -56,14 +56,7 @@ function customValue() {
 }
 
 customValue();
-
-$("#bill_input").on("click change keydown keyup paste", function () {
-
-    console.log(bill_input.value.lenght)
-    if(bill_input.value.lenght == 3){
-        console.log("ENTREI NO IF")
-        // document.getElementsByClassName('result-amount').style.fontSize = "30px";
-    }
+$("#bill_input").on("click change keyup paste", function () {
 
     if (button_value_compressed != undefined && lastClickedElement.classList.contains('button-calc')) {
         displayCalc(button_value_compressed,number_people);
@@ -140,10 +133,7 @@ $("#number_people_input").on("click change keyup paste", function () {
     if (number_people_input.value > 0) {
         number_people = number_people_input.value;
         displayCalc(tip_percent,number_people)
-        document.getElementById('unvailable').style.display = "none";
-    } else {
-        document.getElementById('unvailable').style.display = "block";
-    }
+    } 
 });
 
 button_reset.addEventListener("click", function () {

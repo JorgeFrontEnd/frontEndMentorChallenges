@@ -41,7 +41,7 @@ body {
 @media (min-width:767px) {
     #main .tip-calculator {
         width: 1280px;
-        height: 500px;
+        min-height: 500px;
     }
 }
 
@@ -56,14 +56,6 @@ body {
     font-family: 'Fraunces', serif;
     position: relative;
     margin-bottom: 35px;
-
-    span{
-        color: red;
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: none;
-    }
 }
 
 #main .tip-calculator .input-container .input .button-calc{
@@ -126,6 +118,7 @@ body {
 #main .tip-calculator .result-container {
     position: relative;
     background-color: variables.$primary-green;
+    min-height: 400px;
     margin: 20px;
     padding: 30px;
     border-radius: 16px;
@@ -158,13 +151,12 @@ body {
     overflow-x: hidden;
 }
 
-#main .tip-calculator .result-container .button-reset-container{
-    font-family: 'Fraunces', serif;
-    display: flex;
-    align-items: flex-end;
-}
-#main .tip-calculator .result-container .button-reset-container .button-reset{
-    width: 100%;
+#main .tip-calculator .result-container .button-reset{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    width: 80%;
     padding: 10px;
     font-size: 32px;
     font-weight: bold;
@@ -179,10 +171,7 @@ body {
 
 @media(min-width:767px){
     #main .tip-calculator .result-container {
-        height: 85%;
-    }
-    #main .tip-calculator .result-container .button-reset-container{
-        height: 200px;
+        height: 500px;
     }
 }
 
