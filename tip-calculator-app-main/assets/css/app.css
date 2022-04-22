@@ -121,7 +121,10 @@ body {
   border-radius: 16px;
 }
 #main .tip-calculator .result-container .row.amount {
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
 }
 
 #main .tip-calculator .result-container .result-title {
@@ -139,29 +142,17 @@ body {
 }
 
 #main .tip-calculator .result-container .result-amount {
-  position: absolute;
-  top: calc(50% - 15px);
-  right: 30px;
-  font-family: "Fraunces", serif;
-  font-size: 20px;
-  color: #26c0ab;
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
+  font-size: 60px;
+  font-family: "Fraunces", serif;
+  color: #26c0ab;
   overflow-x: hidden;
 }
 
-@media (min-width: 767px) {
-  #main .tip-calculator .result-container .result-amount {
-    font-size: 60px;
-    position: absolute;
-    top: calc(50% - var(--fontsize));
-  }
-}
 #main .tip-calculator .result-container .button-reset {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   bottom: 30px;
   width: 80%;
   padding: 10px;

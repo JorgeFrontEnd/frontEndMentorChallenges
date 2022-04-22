@@ -57,10 +57,8 @@ function customValue() {
 
 customValue();
 $("#bill_input").on("click change keyup paste", function () {
-    console.log(bill_input.value.length);
 
     if(bill_input.value.length >= 10){
-        // var fontsize = root.style.setProperty('--fontsize','30px');
         $(".result-amount").css("font-size","30px");
     }
     if (button_value_compressed != undefined && lastClickedElement.classList.contains('button-calc')) {
