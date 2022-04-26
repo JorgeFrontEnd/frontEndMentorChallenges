@@ -9,7 +9,7 @@ let bill_input = document.getElementById('bill_input'),
     custom_amount_value,
     tip_amount_result,
     tip_amount_rounded,
-    tip_percent,
+    tip_percent = 0,
     lastClickedElement,
     number_people = 1;
 
