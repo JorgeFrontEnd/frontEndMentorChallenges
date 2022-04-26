@@ -19,7 +19,7 @@ function displayCalc(tip_percent, number_people) {
     total_amount_result = parseFloat(bill_input.value / number_people) + parseFloat(tip_amount_result);
     tip_amount_rounded = tip_amount_result.toFixed(2);
     total_amount_rounded = total_amount_result.toFixed(2);
-    const length = $("#bill_input").val().length;
+    let length = $("#bill_input").val().length;
         
     if(length >= 8){
         let potency = expo(total_amount_rounded,2);
