@@ -13,23 +13,27 @@ let bill_input = document.getElementById('bill_input'),
     lastClickedElement,
     number_people = 1;
 
-function displayCalc(tip_percent,number_people) {
+function displayCalc(tip_percent, number_people) {
 
     tip_amount_result = bill_input.value * tip_percent / number_people;
     total_amount_result = parseFloat(bill_input.value / number_people) + parseFloat(tip_amount_result);
     tip_amount_rounded = tip_amount_result.toFixed(2);
     total_amount_rounded = total_amount_result.toFixed(2);
-
-    if (isNaN(total_amount_rounded)) {
-        total_amount_rounded == 0;
-    } else {
+    const length = $("#bill_input").val().length;
+        
+    if(length >= 8){
+        let potency = expo(total_amount_rounded,2);
+        $("#tip_amount").text(potency);
+        $("#total_amount").text(potency);
+    }
+    else {
         $("#tip_amount").text(tip_amount_rounded);
         $("#total_amount").text(total_amount_rounded);
     }
 }
 
 function getLastClicked(e) {
-    e = e || event;
+    e = e || window.event;
     $.lastClicked = e.target || e.srcElement;
 
     lastClickedElement = $.lastClicked;
@@ -41,6 +45,10 @@ function compressButton() {
     tip_percent = button_value_compressed;
 }
 
+function expo(x, y) {
+    return Number.parseFloat(x).toExponential(y);
+}
+
 function customValue() {
     $("#custom_amount").on("click change keyup paste", function () {
 
@@ -49,30 +57,26 @@ function customValue() {
             tip_amount.innerHTML = "0.00";
             total_amount.innerHTML = "0.00";
         } else {
-            displayCalc(custom_amount_value,number_people);
+            displayCalc(custom_amount_value, number_people);
             tip_percent = custom_amount_value;
         }
     });
 }
 
 customValue();
-$("#bill_input").on("click change keyup paste", function () {
 
-    if(bill_input.value.length >= 10){
-        $(".result-amount").css("font-size","30px");
-    }
-    else{
-        $(".result-amount").css("font-size","60px");
-    }
+$("#bill_input").on("click change keyup paste", function () {
+    
     if (button_value_compressed != undefined && lastClickedElement.classList.contains('button-calc')) {
-        displayCalc(button_value_compressed,number_people);
+        displayCalc(button_value_compressed, number_people);
     } else if (custom_amount_value != undefined) {
-        displayCalc(custom_amount_value,number_people);
-    } else if (bill_input.value == 0) {
+        displayCalc(custom_amount_value, number_people);
+    } 
+    else if (bill_input.value == 0) {
         tip_amount.innerHTML = "0.00";
         total_amount.innerHTML = "0.00";
     } else {
-        displayCalc(0,number_people);
+        displayCalc(0, number_people);
     }
 });
 
@@ -86,7 +90,7 @@ $('#grid').click(function () {
             button_calc[3].classList.remove('active');
             button_calc[4].classList.remove('active');
             compressButton();
-            displayCalc(button_value_compressed,number_people);
+            displayCalc(button_value_compressed, number_people);
             break;
         case "10%":
             button_calc[1].classList.add('active');
@@ -95,7 +99,7 @@ $('#grid').click(function () {
             button_calc[3].classList.remove('active');
             button_calc[4].classList.remove('active');
             compressButton();
-            displayCalc(button_value_compressed,number_people);
+            displayCalc(button_value_compressed, number_people);
             break;
         case "15%":
             button_calc[2].classList.add('active');
@@ -104,7 +108,7 @@ $('#grid').click(function () {
             button_calc[3].classList.remove('active');
             button_calc[4].classList.remove('active');
             compressButton();
-            displayCalc(button_value_compressed,number_people);
+            displayCalc(button_value_compressed, number_people);
             break;
         case "25%":
             button_calc[3].classList.add('active');
@@ -113,7 +117,7 @@ $('#grid').click(function () {
             button_calc[2].classList.remove('active');
             button_calc[4].classList.remove('active');
             compressButton();
-            displayCalc(button_value_compressed,number_people);
+            displayCalc(button_value_compressed, number_people);
             break;
         case "50%":
             button_calc[4].classList.add('active');
@@ -122,7 +126,7 @@ $('#grid').click(function () {
             button_calc[2].classList.remove('active');
             button_calc[3].classList.remove('active');
             compressButton();
-            displayCalc(button_value_compressed,number_people);
+            displayCalc(button_value_compressed, number_people);
             break;
         default:
             button_calc[0].classList.remove('active');
@@ -138,8 +142,8 @@ $('#grid').click(function () {
 $("#number_people_input").on("click change keyup paste", function () {
     if (number_people_input.value > 0) {
         number_people = number_people_input.value;
-        displayCalc(tip_percent,number_people)
-    } 
+        displayCalc(tip_percent, number_people)
+    }
 });
 
 button_reset.addEventListener("click", function () {

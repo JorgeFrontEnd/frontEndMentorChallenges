@@ -141,12 +141,24 @@ body {
     flex-direction:column;
     color: #fff;
     h5{
-        font-size: 22px;
+        font-size: 16px;
     }
 
     p{
         color: hsl(186, 14%, 43%);
-        font-size: 20px;
+        font-size: 14px;
+    }
+}
+
+@media(min-width:767px){
+    #main .tip-calculator .result-container .result-title{
+        h5{
+            font-size: 22px;
+        }
+    
+        p{
+            font-size: 20px;
+        }
     }
 }
 
@@ -154,11 +166,22 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-size: 60px;
+    font-size: 30px;
     font-family: 'Fraunces', serif;
     color: variables.$secondary-green;
     overflow-x: hidden;
+}
 
+@media(min-width:767px){
+    #main .tip-calculator .result-container .result-amount{
+        font-size: 40px;
+    }
+}
+
+@media(min-width:1280px){
+    #main .tip-calculator .result-container .result-amount{
+        font-size: 60px;
+    }
 }
 
 #main .tip-calculator .result-container .button-reset{
