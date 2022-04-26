@@ -64,7 +64,6 @@ $("#bill_input").on("click change keyup paste", function () {
     else{
         $(".result-amount").css("font-size","60px");
     }
-    
     if (button_value_compressed != undefined && lastClickedElement.classList.contains('button-calc')) {
         displayCalc(button_value_compressed,number_people);
     } else if (custom_amount_value != undefined) {
