@@ -153,6 +153,8 @@ body {
 
 #main .tip-calculator .result-container .button-reset {
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 30px;
   width: 80%;
   padding: 10px;
