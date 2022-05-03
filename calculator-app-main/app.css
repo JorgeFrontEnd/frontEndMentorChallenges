@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.calculator {
+    background-color: #ccc;
+}
+
+.calculator .buttons {
+    display: grid;
+    grid-template-columns: 4;
+    grid-template-rows: 6;
+}
