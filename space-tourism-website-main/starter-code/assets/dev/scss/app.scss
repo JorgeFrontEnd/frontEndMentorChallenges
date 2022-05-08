@@ -1,3 +1,9 @@
+
+/* This block allows to chance variables value without rewriting code*/
+// @use "home" with(
+//     $home_background_image_mobile: ""
+// );
+
 @use "forward";
 
 * {
@@ -7,75 +13,4 @@
 body {
     margin: 0;
     padding: 0;
-}
-
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0;
-
-    #hamburguer_toggle {
-        display: none;
-    }
-
-    .hamburguer {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1;
-        background: url("/starter-code/assets/shared/icon-hamburger.svg") no-repeat;
-        width: 24px;
-        height: 21px;
-    }
-
-    ul {
-        display: flex;
-        flex-direction: column;
-        list-style-type: none;
-        padding: 3rem;
-        margin: 0;
-        background-color: red;
-        height: 100vh;
-        opacity: 0;
-
-        li {
-            margin: 0 2rem;
-        }
-    }
-
-    #hamburguer_toggle:checked~ul {
-        opacity: 1;
-    }
-
-    #hamburguer_toggle:checked~.hamburguer {
-        background: url("/starter-code/assets/shared/icon-close.svg") no-repeat;
-    }
-
-    @media(min-width:767px) {
-        .hamburguer {
-            display: none;
-        }
-
-        ul {
-            opacity: 1;
-            height: 100%;
-        }
-    }
-
-    @media(min-width:1200px) {
-        nav {
-            padding: 4rem 0;
-        }
-
-        ul {
-            display: flex;
-            flex-direction: row;
-            margin: 3rem 0;
-
-            li {
-                margin: 0 2rem;
-            }
-        }
-    }
 }

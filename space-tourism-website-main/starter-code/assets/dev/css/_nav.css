@@ -58,31 +58,4 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   }
 }
 
-#home {
-  background-image: url("/starter-code/assets/home/background-home-mobile.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-}
-
-@media (min-width: 768px) {
-  #home {
-    background-image: url("/starter-code/assets/home/background-home-tablet.jpg");
-  }
-}
-@media (min-width: 1200px) {
-  #home {
-    background-image: url("/starter-code/assets/home/background-home-desktop.jpg");
-  }
-}
-/* This block allows to chance variables value without rewriting code*/
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=_nav.css.map */
