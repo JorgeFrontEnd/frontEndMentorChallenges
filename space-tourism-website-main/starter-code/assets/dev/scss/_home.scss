@@ -1,12 +1,21 @@
 $home_background_image_mobile : "/starter-code/assets/home/background-home-mobile.jpg" !default;
 $home_background_image_tablet : "/starter-code/assets/home/background-home-tablet.jpg" !default;
 $home_background_image_desktop : "/starter-code/assets/home/background-home-desktop.jpg" !default;
+$primary_color : #FFFFFF;
+$secondary_color : #D0D6F9;
 
 #home{
     background-image: url($home_background_image_mobile);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    main{
+        color: $primary_color;
+        .container{
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }
 
 @media(min-width:768px){

@@ -76,6 +76,13 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   background-size: cover;
   height: 100vh;
 }
+#home main {
+  color: #FFFFFF;
+}
+#home main .container {
+  display: flex;
+  flex-direction: column;
+}
 
 @media (min-width: 768px) {
   #home {
