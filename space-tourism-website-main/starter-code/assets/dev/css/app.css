@@ -5,23 +5,26 @@ nav {
   justify-content: space-between;
   padding: 0;
   color: #FFFFFF;
+  /* For huge devices */
 }
 nav #hamburguer_toggle {
   display: none;
 }
 nav .hamburguer {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1;
+  top: 25px;
+  right: 25px;
   background: url("/starter-code/assets/shared/icon-hamburger.svg") no-repeat;
   width: 24px;
   height: 21px;
   transition: 0.3s ease-in-out;
+  z-index: 2;
 }
 nav ul {
+  position: fixed;
+  right: 0;
   font-family: "Barlow Condensed";
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 19px;
   letter-spacing: 2.7px;
   display: flex;
@@ -30,12 +33,17 @@ nav ul {
   padding: 5rem 6rem 0 2rem;
   margin: 0;
   background-color: #1A1D27;
-  height: 100vh;
   opacity: 0;
+  height: 100%;
   transition: 0.5s ease-in-out;
+  z-index: 1;
+}
+nav ul a {
+  text-decoration: none;
+  color: #FFFFFF;
 }
 nav ul li {
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 nav #hamburguer_toggle:checked ~ ul {
   opacity: 1;
@@ -53,8 +61,8 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
     flex-direction: row;
     margin: 0;
     opacity: 1;
-    height: 100%;
-    padding: 2.5rem;
+    height: auto;
+    padding: 3rem;
   }
   nav ul li {
     margin: 0 1rem;
@@ -69,6 +77,16 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
     margin: 0 2rem;
   }
 }
+@media (min-width: 2000px) {
+  nav ul {
+    margin: 3rem 0;
+    padding: 4rem 12rem 4rem 6rem;
+    font-size: 1.5rem;
+  }
+  nav ul li {
+    margin: 0 2rem;
+  }
+}
 
 #home {
   background-image: url("/starter-code/assets/home/background-home-mobile.jpg");
@@ -77,9 +95,15 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   height: 100vh;
 }
 #home main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #FFFFFF;
+  height: 100%;
 }
 #home main .container {
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
 }
@@ -92,6 +116,10 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
 @media (min-width: 1200px) {
   #home {
     background-image: url("/starter-code/assets/home/background-home-desktop.jpg");
+  }
+  #home main .container {
+    display: flex;
+    flex-direction: row;
   }
 }
 /* This block allows to chance variables value without rewriting code*/

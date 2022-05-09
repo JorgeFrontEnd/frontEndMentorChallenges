@@ -1,31 +1,44 @@
-$home_background_image_mobile : "/starter-code/assets/home/background-home-mobile.jpg" !default;
-$home_background_image_tablet : "/starter-code/assets/home/background-home-tablet.jpg" !default;
-$home_background_image_desktop : "/starter-code/assets/home/background-home-desktop.jpg" !default;
-$primary_color : #FFFFFF;
-$secondary_color : #D0D6F9;
+@use "variables";
+@use "functions";
 
-#home{
-    background-image: url($home_background_image_mobile);
+#home {
+    background-image: url(variables.$home_background_image_mobile);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    main{
-        color: $primary_color;
-        .container{
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: variables.$primary_color;
+        height: 100%;
+
+        .container {
+            max-width: 1200px;
             display: flex;
             flex-direction: column;
         }
     }
 }
 
-@media(min-width:768px){
-    #home{
-        background-image: url($home_background_image_tablet);
+@media(min-width:768px) {
+    #home {
+        background-image: url(variables.$home_background_image_tablet);
     }
 }
 
-@media(min-width:1200px){
-    #home{
-        background-image: url($home_background_image_desktop);
+@media(min-width:1200px) {
+    #home {
+        background-image: url(variables.$home_background_image_desktop);
+
+        main {
+            .container {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+
     }
 }
