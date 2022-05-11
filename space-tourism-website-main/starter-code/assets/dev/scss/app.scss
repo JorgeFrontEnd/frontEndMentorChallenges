@@ -1,9 +1,3 @@
-
-/* This block allows to chance variables value without rewriting code*/
-// @use "home" with(
-//     $home_background_image_mobile: ""
-// );
-
 @use "forward";
 
 * {
@@ -13,4 +7,8 @@
 body {
     margin: 0;
     padding: 0;
+}
+
+.col{
+    width: 100%;
 }

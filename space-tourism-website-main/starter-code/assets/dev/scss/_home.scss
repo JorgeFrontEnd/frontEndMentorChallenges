@@ -1,5 +1,6 @@
 @use "variables";
 @use "functions";
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Bellefair&family=Fraunces:opsz,wght@9..144,100&family=Smooch+Sans:wght@100&display=swap');
 
 #home {
     background-image: url(variables.$home_background_image_mobile);
@@ -16,9 +17,52 @@
         height: 100%;
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             display: flex;
             flex-direction: column;
+            align-items: flex-end;  
+            text-transform: uppercase;
+            .col{
+               text-align: center;
+            }
+            p {
+                font-family: "Barlow Condensed";
+                font-size: functions.multiplication(1);
+                color: variables.$secondary_color;
+                margin: 0 0 functions.multiplication(0.5) 0;
+            }
+
+            strong {
+                font-family: 'Bellefair', serif;
+                font-size: functions.multiplication(5);
+                font-weight: 400;
+            }
+
+            p:last-child {
+                width: 100%;
+                margin: functions.multiplication(1) 0 0 0;
+                text-transform: none;
+                font-family: "Barlow";
+                font-size: functions.multiplication(0.938);
+            }
+
+            .btn-container {
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                height: 100%;
+
+                button {
+                    text-transform: uppercase;
+                    font-size: functions.multiplication(1.25);
+                    font-family: 'Bellefair';
+                    border-radius: 50%;
+                    border: none;
+                    width: 150px;
+                    height: 150px;
+                    cursor: pointer;
+                }
+            }
         }
     }
 }
@@ -37,8 +81,30 @@
             .container {
                 display: flex;
                 flex-direction: row;
+                height: 70%;
+
+                p {
+                    font-size: functions.multiplication(1.75);
+                }
+
+                strong {
+                    font-size: functions.multiplication(9.375);
+                }
+
+                p:last-child {
+                    width: 80%;
+                    font-size: functions.multiplication(1.125);
+                }
+
+                .btn-container {
+                    button {
+                        font-size: functions.multiplication(2);
+                        width: 274px;
+                        height: 274px;
+                    }
+                }
+
             }
         }
-
     }
 }

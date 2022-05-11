@@ -44,7 +44,11 @@ nav {
         z-index: 1;
         a{
             text-decoration: none;
+            border-bottom: transparent solid 3px;
             color: variables.$primary_color;
+            &:hover{
+                border-bottom: variables.$primary_color solid 3px;
+            }
         }
 
         li {
@@ -76,7 +80,7 @@ nav {
             padding: functions.multiplication(3);
 
             li {
-                margin: 0 variables.$default_value;
+                margin: 0;
             }
         }
     }
@@ -85,10 +89,6 @@ nav {
         ul {
             margin: functions.multiplication(2) 0;
             padding: functions.multiplication(2.5) functions.multiplication(8) functions.multiplication(2.5) functions.multiplication(5);
-
-            li {
-                margin: 0 functions.multiplication(2);
-            }
         }
 
     }

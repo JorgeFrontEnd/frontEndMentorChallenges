@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Fraunces:opsz,wght@9..144,100&family=Smooch+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Bellefair&family=Fraunces:opsz,wght@9..144,100&family=Smooch+Sans:wght@100&display=swap");
 nav {
   display: flex;
   flex-direction: row;
@@ -24,7 +25,7 @@ nav ul {
   position: fixed;
   right: 0;
   font-family: "Barlow Condensed";
-  font-size: 1rem;
+  font-size: 20px;
   line-height: 19px;
   letter-spacing: 2.7px;
   display: flex;
@@ -40,7 +41,11 @@ nav ul {
 }
 nav ul a {
   text-decoration: none;
+  border-bottom: transparent solid 3px;
   color: #FFFFFF;
+}
+nav ul a:hover {
+  border-bottom: #FFFFFF solid 3px;
 }
 nav ul li {
   margin: 1rem 0;
@@ -65,7 +70,7 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
     padding: 3rem;
   }
   nav ul li {
-    margin: 0 1rem;
+    margin: 0;
   }
 }
 @media (min-width: 1200px) {
@@ -73,15 +78,12 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
     margin: 2rem 0;
     padding: 2.5rem 8rem 2.5rem 5rem;
   }
-  nav ul li {
-    margin: 0 2rem;
-  }
 }
 @media (min-width: 2000px) {
   nav ul {
     margin: 3rem 0;
     padding: 4rem 12rem 4rem 6rem;
-    font-size: 1.5rem;
+    font-size: 30px;
   }
   nav ul li {
     margin: 0 2rem;
@@ -103,9 +105,48 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   height: 100%;
 }
 #home main .container {
-  max-width: 1200px;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  text-transform: uppercase;
+}
+#home main .container .col {
+  text-align: center;
+}
+#home main .container p {
+  font-family: "Barlow Condensed";
+  font-size: 1rem;
+  color: #D0D6F9;
+  margin: 0 0 0.5rem 0;
+}
+#home main .container strong {
+  font-family: "Bellefair", serif;
+  font-size: 5rem;
+  font-weight: 400;
+}
+#home main .container p:last-child {
+  width: 100%;
+  margin: 1rem 0 0 0;
+  text-transform: none;
+  font-family: "Barlow";
+  font-size: 0.938rem;
+}
+#home main .container .btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+#home main .container .btn-container button {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-family: "Bellefair";
+  border-radius: 50%;
+  border: none;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -120,9 +161,24 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   #home main .container {
     display: flex;
     flex-direction: row;
+    height: 70%;
+  }
+  #home main .container p {
+    font-size: 1.75rem;
+  }
+  #home main .container strong {
+    font-size: 9.375rem;
+  }
+  #home main .container p:last-child {
+    width: 80%;
+    font-size: 1.125rem;
+  }
+  #home main .container .btn-container button {
+    font-size: 2rem;
+    width: 274px;
+    height: 274px;
   }
 }
-/* This block allows to chance variables value without rewriting code*/
 * {
   box-sizing: border-box;
 }
@@ -130,6 +186,10 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
 body {
   margin: 0;
   padding: 0;
+}
+
+.col {
+  width: 100%;
 }
 
 /*# sourceMappingURL=app.css.map */
