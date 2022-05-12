@@ -7,27 +7,29 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    min-height: 750px;
 
     main {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: variables.$primary_color;
+        color: variables.$text_color;
         height: 100%;
 
         .container {
-            max-width: 1100px;
+            max-width: 300px;
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;  
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-end;
             text-transform: uppercase;
-            .col{
-               text-align: center;
-            }
+            text-align: center;
+            height: 80%;
+
             p {
                 font-family: "Barlow Condensed";
-                font-size: functions.multiplication(1);
+                font-size: functions.multiplication(1.5);
                 color: variables.$secondary_color;
                 margin: 0 0 functions.multiplication(0.5) 0;
             }
@@ -70,18 +72,10 @@
 @media(min-width:768px) {
     #home {
         background-image: url(variables.$home_background_image_tablet);
-    }
-}
-
-@media(min-width:1200px) {
-    #home {
-        background-image: url(variables.$home_background_image_desktop);
 
         main {
             .container {
-                display: flex;
-                flex-direction: row;
-                height: 70%;
+                max-width: 450px;
 
                 p {
                     font-size: functions.multiplication(1.75);
@@ -92,18 +86,47 @@
                 }
 
                 p:last-child {
+                    font-size: functions.multiplication(1);
+                }
+
+                .btn-container {
+                    button {
+                        font-size: functions.multiplication(2);
+                        width: 242px;
+                        height: 242px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width:1200px) {
+    #home {
+        background-image: url(variables.$home_background_image_desktop);
+
+        main {
+            .container {
+                max-width: 1200px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                text-align: start;
+
+                p:last-child {
                     width: 80%;
                     font-size: functions.multiplication(1.125);
                 }
 
                 .btn-container {
+                    justify-content: flex-end;
+
                     button {
                         font-size: functions.multiplication(2);
                         width: 274px;
                         height: 274px;
                     }
                 }
-
             }
         }
     }

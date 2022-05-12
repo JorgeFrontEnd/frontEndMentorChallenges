@@ -1,11 +1,27 @@
 <nav>
-    <div class="logo"></div>
+    <div class="logo">
+        <picture>
+            <img src="./assets/shared/logo.svg">
+        </picture>
+    </div>
     <input id="hamburguer_toggle" type="checkbox">
     <label class="hamburguer" for="hamburguer_toggle"></label>
     <ul>
-        <a href="#"><li>00 Home</li></a>
-        <a href="#"><li>01 Destination</li></a>
-        <a href="#"><li>02 Crew</li></a>
-        <a href="#"><li>03 Technology</li></a>
+        <li class="nav-link active">
+            <a href="index.html"> <span>00</span> Home</a>
+            <div class="underline"></div>
+        </li>
+        <li class="nav-link">
+            <a href="#"><span>01</span> Destination</a>
+            <div class=" underline"></div>
+        </li>
+        <li class="nav-link">
+            <a href="#"><span>02</span> Crew</a>
+            <div class="underline"></div>
+        </li>
+        <li class="nav-link">
+            <a href="#"><span>03</span> Technology</a>
+            <div class="underline"></div>
+        </li>
     </ul>
 </nav>

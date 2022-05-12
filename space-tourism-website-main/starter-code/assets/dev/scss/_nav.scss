@@ -4,19 +4,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Fraunces:opsz,wght@9..144,100&family=Smooch+Sans:wght@100&display=swap');
 
 nav {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0;
-    color: variables.$primary_color;
+    color: variables.$text_color;
 
     #hamburguer_toggle {
         display: none;
     }
 
+    .logo {
+        position: absolute;
+        top: 18px;
+        left: 39px;
+    }
+
     .hamburguer {
         position: fixed;
-        top: 25px;
+        top: 33px;
         right: 25px;
         background: url(variables.$icon_hamburguer) no-repeat;
         width: 24px;
@@ -37,21 +44,21 @@ nav {
         list-style-type: none;
         padding: functions.multiplication(5) functions.multiplication(6) 0 functions.multiplication(2);
         margin: 0;
-        background-color: #1A1D27;
+        background-color: variables.$primary_color;
         opacity: 0;
         height: 100%;
         transition: .5s ease-in-out;
         z-index: 1;
-        a{
+
+        a {
             text-decoration: none;
-            border-bottom: transparent solid 3px;
-            color: variables.$primary_color;
-            &:hover{
-                border-bottom: variables.$primary_color solid 3px;
-            }
+            color: variables.$text_color;
         }
 
         li {
+            position: relative;
+            display: flex;
+            align-items: center;
             margin: variables.$default_value 0;
         }
     }
@@ -74,36 +81,59 @@ nav {
         ul {
             display: flex;
             flex-direction: row;
+            align-items: center;
+            font-size: calc(variables.$font_size * 0.875);
             margin: 0;
             opacity: 1;
-            height: auto;
-            padding: functions.multiplication(3);
+            padding: 0;
+            height: 100px;
 
             li {
-                margin: 0;
+                margin: 0 functions.multiplication(1);
+                height: 100%;
+                .underline {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    border-bottom: 3px solid transparent;
+                }
+
+                &.active .underline{
+                    width: 100%;
+                    border-bottom: 3px solid variables.$text_color;
+                }
+
+                &:hover .underline {
+                    width: 100%;
+                    border-bottom: 3px solid variables.$text_color;
+                }
+
+                span {
+                    opacity: 0;
+                }
             }
         }
     }
 
     @media(min-width:1200px) {
-        ul {
-            margin: functions.multiplication(2) 0;
-            padding: functions.multiplication(2.5) functions.multiplication(8) functions.multiplication(2.5) functions.multiplication(5);
+        .logo {
+            top: 54px;
+            left: 55px;
         }
 
-    }
-
-    /* For huge devices */
-    @media(min-width:2000px) {
-
         ul {
-            margin: functions.multiplication(3) 0;
-            padding: functions.multiplication(4) functions.multiplication(12) functions.multiplication(4) functions.multiplication(6);
-            font-size: calc(variables.$font_size * 1.5);
+            width: 55%;
+            margin: functions.multiplication(2) 0;
+            padding: 0 functions.multiplication(6);
 
             li {
-                margin: 0 functions.multiplication(2);
+                margin: 0 functions.multiplication(1.5);
+
+                span {
+                    opacity: 1;
+                }
             }
         }
+
     }
 }
