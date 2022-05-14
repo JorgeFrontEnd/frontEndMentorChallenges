@@ -1,0 +1,25 @@
+@use "variables";
+@use "functions";
+
+#destination {
+    background-image: url(variables.$destination_background_image_mobile);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    main{
+        height: 100%;
+        color: variables.$text_color;
+    }
+}
+
+@media(min-width:767px) {
+    #destination {
+        background-image: url(variables.$destination_background_image_tablet);
+    }
+}
+
+@media(min-width:1200px) {
+    #destination {
+        background-image: url(variables.$destination_background_image_desktop);
+    }
+}

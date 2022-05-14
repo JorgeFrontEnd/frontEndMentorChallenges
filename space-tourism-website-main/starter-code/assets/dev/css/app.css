@@ -144,7 +144,7 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   font-family: "Barlow Condensed";
   font-size: 1.5rem;
   color: #D0D6F9;
-  margin: 0 0 0.5rem 0;
+  margin: 0;
 }
 #home main .container strong {
   font-family: "Bellefair", serif;
@@ -153,7 +153,6 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
 }
 #home main .container p:last-child {
   width: 100%;
-  margin: 1rem 0 0 0;
   text-transform: none;
   font-family: "Barlow";
   font-size: 0.938rem;
@@ -173,6 +172,10 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   width: 150px;
   height: 150px;
   cursor: pointer;
+  transition: ease-in-out 0.8s;
+}
+#home main .container .btn-container button:hover {
+  box-shadow: 0 0 0 70px rgba(255, 255, 255, 0.1);
 }
 
 @media (min-width: 768px) {
@@ -219,6 +222,27 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
     font-size: 2rem;
     width: 274px;
     height: 274px;
+  }
+}
+#destination {
+  background-image: url("/starter-code/assets/destination/background-destination-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+#destination main {
+  height: 100%;
+  color: #FFFFFF;
+}
+
+@media (min-width: 767px) {
+  #destination {
+    background-image: url("/starter-code/assets/destination/background-destination-tablet.jpg");
+  }
+}
+@media (min-width: 1200px) {
+  #destination {
+    background-image: url("/starter-code/assets/destination/background-destination-desktop.jpg");
   }
 }
 * {
