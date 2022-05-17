@@ -25,7 +25,7 @@
             align-items: flex-end;
             text-transform: uppercase;
             text-align: center;
-            height: 80%;
+            height: 80%;    
 
             p {
                 font-family: "Barlow Condensed";
@@ -56,13 +56,13 @@
                 button {
                     text-transform: uppercase;
                     font-size: functions.multiplication(1.25);
-                    font-family: 'Bellefair';
+                    font-family: 'Bellefair',serif;
                     border-radius: 50%;
                     border: none;
                     width: 150px;
                     height: 150px;
                     cursor: pointer;
-                    transition: ease-in-out .8s;
+                    transition: ease-in-out .6s;
                     &:hover{
                         box-shadow: 0 0 0 70px rgb(255,255,255,.1);
                     }
@@ -111,8 +111,6 @@
         main {
             .container {
                 max-width: 1200px;
-                display: flex;
-                flex-direction: row;
                 flex-wrap: nowrap;
                 text-align: start;
 

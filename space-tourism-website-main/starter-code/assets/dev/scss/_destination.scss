@@ -7,19 +7,49 @@
     background-size: cover;
     height: 100vh;
     main{
-        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         color: variables.$text_color;
+        height: 100%;
+        .pick{
+            position: absolute;
+            top: 20%;
+            left: 10%;
+        }
+        .container{
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+            max-width: 300px;
+            height: 90%;
+            text-align: center;
+            li{
+                display: inline-block;
+            }
+        }
     }
 }
 
 @media(min-width:767px) {
     #destination {
         background-image: url(variables.$destination_background_image_tablet);
+        main{
+            .container{
+                max-width: 450px;
+            }
+        }
     }
 }
 
 @media(min-width:1200px) {
     #destination {
         background-image: url(variables.$destination_background_image_desktop);
+        main{
+            .container{
+                max-width: 1200px;
+            }
+        }
     }
 }

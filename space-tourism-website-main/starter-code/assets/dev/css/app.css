@@ -30,12 +30,11 @@ nav ul {
   position: fixed;
   right: 0;
   font-family: "Barlow Condensed";
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 19px;
   letter-spacing: 2.7px;
   display: flex;
   flex-direction: column;
-  list-style-type: none;
   padding: 5rem 6rem 0 2rem;
   margin: 0;
   background-color: #1A1D27;
@@ -69,7 +68,7 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 17.5px;
+    font-size: 1.1rem;
     margin: 0;
     opacity: 1;
     padding: 0;
@@ -166,13 +165,13 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
 #home main .container .btn-container button {
   text-transform: uppercase;
   font-size: 1.25rem;
-  font-family: "Bellefair";
+  font-family: "Bellefair", serif;
   border-radius: 50%;
   border: none;
   width: 150px;
   height: 150px;
   cursor: pointer;
-  transition: ease-in-out 0.8s;
+  transition: ease-in-out 0.6s;
 }
 #home main .container .btn-container button:hover {
   box-shadow: 0 0 0 70px rgba(255, 255, 255, 0.1);
@@ -206,8 +205,6 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   }
   #home main .container {
     max-width: 1200px;
-    display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
     text-align: start;
   }
@@ -231,18 +228,44 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   height: 100vh;
 }
 #destination main {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #FFFFFF;
+  height: 100%;
+}
+#destination main .pick {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+#destination main .container {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 300px;
+  height: 90%;
+  text-align: center;
+}
+#destination main .container li {
+  display: inline-block;
 }
 
 @media (min-width: 767px) {
   #destination {
     background-image: url("/starter-code/assets/destination/background-destination-tablet.jpg");
   }
+  #destination main .container {
+    max-width: 450px;
+  }
 }
 @media (min-width: 1200px) {
   #destination {
     background-image: url("/starter-code/assets/destination/background-destination-desktop.jpg");
+  }
+  #destination main .container {
+    max-width: 1200px;
   }
 }
 * {
@@ -252,6 +275,10 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
 body {
   margin: 0;
   padding: 0;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .col {

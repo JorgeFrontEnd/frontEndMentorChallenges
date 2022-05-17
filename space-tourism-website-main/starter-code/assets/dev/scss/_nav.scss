@@ -36,12 +36,11 @@ nav {
         position: fixed;
         right: 0;
         font-family: 'Barlow Condensed';
-        font-size: variables.$font_size;
+        font-size: functions.multiplication(1.25);
         line-height: 19px;
         letter-spacing: 2.7px;
         display: flex;
         flex-direction: column;
-        list-style-type: none;
         padding: functions.multiplication(5) functions.multiplication(6) 0 functions.multiplication(2);
         margin: 0;
         background-color: variables.$primary_color;
@@ -82,7 +81,7 @@ nav {
             display: flex;
             flex-direction: row;
             align-items: center;
-            font-size: calc(variables.$font_size * 0.875);
+            font-size: functions.multiplication(1.1);
             margin: 0;
             opacity: 1;
             padding: 0;
