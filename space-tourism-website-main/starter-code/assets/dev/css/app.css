@@ -11,32 +11,25 @@ nav {
 nav #hamburguer_toggle {
   display: none;
 }
-nav .logo {
-  position: absolute;
-  top: 18px;
-  left: 39px;
-}
 nav .hamburguer {
   position: fixed;
   top: 33px;
   right: 25px;
-  background: url("/starter-code/assets/shared/icon-hamburger.svg") no-repeat;
+  background: url("/assets/shared/icon-hamburger.svg") no-repeat;
   width: 24px;
   height: 21px;
   transition: 0.3s ease-in-out;
   z-index: 2;
 }
 nav ul {
+  display: none;
   position: fixed;
   right: 0;
   font-family: "Barlow Condensed";
   font-size: 1.25rem;
   line-height: 19px;
   letter-spacing: 2.7px;
-  display: flex;
-  flex-direction: column;
   padding: 5rem 6rem 0 2rem;
-  margin: 0;
   background-color: #1A1D27;
   opacity: 0;
   height: 100%;
@@ -51,16 +44,20 @@ nav ul li {
   position: relative;
   display: flex;
   align-items: center;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 nav #hamburguer_toggle:checked ~ ul {
+  display: block;
   opacity: 1;
 }
 nav #hamburguer_toggle:checked ~ .hamburguer {
-  background: url("/starter-code/assets/shared/icon-close.svg") no-repeat;
+  background: url("/assets/shared/icon-close.svg") no-repeat;
   transition: 0.3s ease-in-out;
 }
 @media (min-width: 767px) {
+  nav {
+    /* */
+  }
   nav .hamburguer {
     display: none;
   }
@@ -69,9 +66,8 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
     flex-direction: row;
     align-items: center;
     font-size: 1.1rem;
-    margin: 0;
     opacity: 1;
-    padding: 0;
+    padding: 0 1.5rem;
     height: 100px;
   }
   nav ul li {
@@ -93,14 +89,14 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
     border-bottom: 3px solid #FFFFFF;
   }
   nav ul li span {
-    opacity: 0;
+    display: none;
+  }
+  nav #hamburguer_toggle:checked ~ ul {
+    display: flex;
+    opacity: 1;
   }
 }
 @media (min-width: 1200px) {
-  nav .logo {
-    top: 54px;
-    left: 55px;
-  }
   nav ul {
     width: 55%;
     margin: 2rem 0;
@@ -110,12 +106,13 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
     margin: 0 1.5rem;
   }
   nav ul li span {
+    display: inline;
     opacity: 1;
   }
 }
 
 #home {
-  background-image: url("/starter-code/assets/home/background-home-mobile.jpg");
+  background-image: url("/assets/home/background-home-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -179,7 +176,7 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
 
 @media (min-width: 768px) {
   #home {
-    background-image: url("/starter-code/assets/home/background-home-tablet.jpg");
+    background-image: url("/assets/home/background-home-tablet.jpg");
   }
   #home main .container {
     max-width: 450px;
@@ -201,7 +198,7 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
 }
 @media (min-width: 1200px) {
   #home {
-    background-image: url("/starter-code/assets/home/background-home-desktop.jpg");
+    background-image: url("/assets/home/background-home-desktop.jpg");
   }
   #home main .container {
     max-width: 1200px;
@@ -222,12 +219,14 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   }
 }
 #destination {
-  background-image: url("/starter-code/assets/destination/background-destination-mobile.jpg");
+  background-image: url("/assets/destination/background-destination-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  min-height: 750px;
 }
 #destination main {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -235,26 +234,46 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   color: #FFFFFF;
   height: 100%;
 }
-#destination main .pick {
-  position: absolute;
-  top: 20%;
-  left: 10%;
+#destination main #moon:checked ~ .container .moon-destin,
+#destination main #mars:checked ~ .container .mars-destin,
+#destination main #europa:checked ~ .container .europa-destin,
+#destination main #titan:checked ~ .container .titan-destin {
+  display: block;
+}
+#destination main input[type=radio] {
+  display: none;
 }
 #destination main .container {
+  position: relative;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
-  max-width: 300px;
-  height: 90%;
-  text-align: center;
 }
-#destination main .container li {
-  display: inline-block;
+#destination main .container ul {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#destination main .container ul label {
+  margin: 0 0.5rem;
+}
+#destination main .container .moon-destin,
+#destination main .container .mars-destin,
+#destination main .container .europa-destin,
+#destination main .container .titan-destin {
+  display: none;
+}
+#destination main .container picture img {
+  width: 50%;
 }
 
 @media (min-width: 767px) {
   #destination {
-    background-image: url("/starter-code/assets/destination/background-destination-tablet.jpg");
+    background-image: url("/assets/destination/background-destination-tablet.jpg");
   }
   #destination main .container {
     max-width: 450px;
@@ -262,10 +281,11 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
 }
 @media (min-width: 1200px) {
   #destination {
-    background-image: url("/starter-code/assets/destination/background-destination-desktop.jpg");
+    background-image: url("/assets/destination/background-destination-desktop.jpg");
   }
   #destination main .container {
     max-width: 1200px;
+    flex-direction: row;
   }
 }
 * {
@@ -279,6 +299,8 @@ body {
 
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .col {

@@ -15,11 +15,11 @@ nav {
         display: none;
     }
 
-    .logo {
-        position: absolute;
-        top: 18px;
-        left: 39px;
-    }
+    // .logo {
+    //     position: absolute;
+    //     top: 18px;
+    //     left: 39px;
+    // }
 
     .hamburguer {
         position: fixed;
@@ -33,22 +33,19 @@ nav {
     }
 
     ul {
+        display: none;
         position: fixed;
         right: 0;
         font-family: 'Barlow Condensed';
         font-size: functions.multiplication(1.25);
         line-height: 19px;
         letter-spacing: 2.7px;
-        display: flex;
-        flex-direction: column;
         padding: functions.multiplication(5) functions.multiplication(6) 0 functions.multiplication(2);
-        margin: 0;
         background-color: variables.$primary_color;
         opacity: 0;
         height: 100%;
         transition: .5s ease-in-out;
         z-index: 1;
-
         a {
             text-decoration: none;
             color: variables.$text_color;
@@ -58,11 +55,12 @@ nav {
             position: relative;
             display: flex;
             align-items: center;
-            margin: variables.$default_value 0;
+            margin: functions.multiplication(2) 0;
         }
     }
 
     #hamburguer_toggle:checked~ul {
+        display: block;
         opacity: 1;
     }
 
@@ -82,9 +80,8 @@ nav {
             flex-direction: row;
             align-items: center;
             font-size: functions.multiplication(1.1);
-            margin: 0;
             opacity: 1;
-            padding: 0;
+            padding: 0 functions.multiplication(1.5);
             height: 100px;
 
             li {
@@ -108,17 +105,22 @@ nav {
                 }
 
                 span {
-                    opacity: 0;
+                    display: none;
                 }
             }
+        }
+        /* */
+        #hamburguer_toggle:checked~ul {
+            display: flex;
+            opacity: 1;
         }
     }
 
     @media(min-width:1200px) {
-        .logo {
-            top: 54px;
-            left: 55px;
-        }
+        // .logo {
+        //     top: 54px;
+        //     left: 55px;
+        // }
 
         ul {
             width: 55%;
@@ -129,6 +131,7 @@ nav {
                 margin: 0 functions.multiplication(1.5);
 
                 span {
+                    display: inline;
                     opacity: 1;
                 }
             }

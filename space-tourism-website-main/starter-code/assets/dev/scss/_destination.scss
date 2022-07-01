@@ -6,27 +6,56 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    main{
+    min-height: 750px;
+
+    main {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: variables.$text_color;
         height: 100%;
-        .pick{
-            position: absolute;
-            top: 20%;
-            left: 10%;
+
+        #moon:checked~.container .moon-destin,
+        #mars:checked~.container .mars-destin,
+        #europa:checked~.container .europa-destin,
+        #titan:checked~.container .titan-destin {
+            display: block;
         }
-        .container{
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .container {
+            position: relative;
             display: flex;
-            align-items: flex-end;
+            flex-direction: column;
+            justify-content: center;
             width: 100%;
-            max-width: 300px;
-            height: 90%;
-            text-align: center;
-            li{
-                display: inline-block;
+
+            ul {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                label{
+                    margin: 0 functions.multiplication(0.5);
+                }
+            }
+
+            .moon-destin,
+            .mars-destin,
+            .europa-destin,
+            .titan-destin {
+                display: none;
+            }
+
+            picture img{
+                width: 50%;
             }
         }
     }
@@ -35,8 +64,9 @@
 @media(min-width:767px) {
     #destination {
         background-image: url(variables.$destination_background_image_tablet);
-        main{
-            .container{
+
+        main {
+            .container {
                 max-width: 450px;
             }
         }
@@ -46,9 +76,11 @@
 @media(min-width:1200px) {
     #destination {
         background-image: url(variables.$destination_background_image_desktop);
-        main{
-            .container{
+
+        main {
+            .container {
                 max-width: 1200px;
+                flex-direction: row;
             }
         }
     }
