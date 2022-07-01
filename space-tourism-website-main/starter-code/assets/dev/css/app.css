@@ -247,8 +247,8 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
+  height: 100%;
 }
 #destination main .container ul {
   position: absolute;
@@ -266,6 +266,7 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
 #destination main .container .europa-destin,
 #destination main .container .titan-destin {
   display: none;
+  height: inherit;
 }
 #destination main .container picture img {
   width: 50%;
