@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Fraunces:opsz,wght@9..144,100&family=Smooch+Sans:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Bellefair&family=Fraunces:opsz,wght@9..144,100&family=Smooch+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
 nav {
   position: relative;
   display: flex;
@@ -55,9 +55,6 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   transition: 0.3s ease-in-out;
 }
 @media (min-width: 767px) {
-  nav {
-    /* */
-  }
   nav .hamburguer {
     display: none;
   }
@@ -68,7 +65,7 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
     font-size: 1.1rem;
     opacity: 1;
     padding: 0 1.5rem;
-    height: 100px;
+    height: 80px;
   }
   nav ul li {
     margin: 0 1rem;
@@ -222,53 +219,118 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   background-image: url("/assets/destination/background-destination-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  min-height: 750px;
+  min-height: 100vh;
+  overflow: hidden;
 }
 #destination main {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  justify-content: center;
   color: #FFFFFF;
-  height: 100%;
+  padding-top: 20%;
+}
+#destination main hr {
+  margin: 0;
+  border: none;
+  height: 1px;
+  background-color: #383B4B;
 }
 #destination main #moon:checked ~ .container .moon-destin,
 #destination main #mars:checked ~ .container .mars-destin,
 #destination main #europa:checked ~ .container .europa-destin,
 #destination main #titan:checked ~ .container .titan-destin {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 #destination main input[type=radio] {
   display: none;
 }
-#destination main .container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+#destination main .container h1 {
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Barlow Condensed";
 }
 #destination main .container ul {
-  position: absolute;
-  top: 50%;
-  width: 100%;
+  margin: 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Barlow Condensed";
+  font-size: 0.875rem;
+  color: #D0D6F9;
 }
 #destination main .container ul label {
-  margin: 0 0.5rem;
+  margin: 0 1rem;
 }
 #destination main .container .moon-destin,
 #destination main .container .mars-destin,
 #destination main .container .europa-destin,
 #destination main .container .titan-destin {
   display: none;
-  height: inherit;
+  margin: 30px;
 }
-#destination main .container picture img {
+#destination main .container .moon-destin .col,
+#destination main .container .mars-destin .col,
+#destination main .container .europa-destin .col,
+#destination main .container .titan-destin .col {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#destination main .container .moon-destin .content h2,
+#destination main .container .mars-destin .content h2,
+#destination main .container .europa-destin .content h2,
+#destination main .container .titan-destin .content h2 {
+  font-family: "Bellefair";
+  text-align: center;
+  font-size: 3.5rem;
+  margin: 0;
+}
+#destination main .container .moon-destin .content p,
+#destination main .container .mars-destin .content p,
+#destination main .container .europa-destin .content p,
+#destination main .container .titan-destin .content p {
+  font-family: "Barlow";
+  font-size: 0.9375rem;
+  text-align: center;
+  color: #D0D6F9;
+  line-height: 25px;
+}
+#destination main .container .moon-destin .content .info,
+#destination main .container .mars-destin .content .info,
+#destination main .container .europa-destin .content .info,
+#destination main .container .titan-destin .content .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+}
+#destination main .container .moon-destin .content .info div,
+#destination main .container .mars-destin .content .info div,
+#destination main .container .europa-destin .content .info div,
+#destination main .container .titan-destin .content .info div {
+  margin-top: 40px;
+}
+#destination main .container .moon-destin .content .info h3,
+#destination main .container .mars-destin .content .info h3,
+#destination main .container .europa-destin .content .info h3,
+#destination main .container .titan-destin .content .info h3 {
+  font-size: 0.875rem;
+  color: #D0D6F9;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+#destination main .container .moon-destin .content .info p,
+#destination main .container .mars-destin .content .info p,
+#destination main .container .europa-destin .content .info p,
+#destination main .container .titan-destin .content .info p {
+  font-size: 1.75rem;
+  margin: 0;
+  color: #FFFFFF;
+}
+#destination main .container img {
   width: 50%;
 }
 
@@ -276,17 +338,81 @@ nav #hamburguer_toggle:checked ~ .hamburguer {
   #destination {
     background-image: url("/assets/destination/background-destination-tablet.jpg");
   }
-  #destination main .container {
-    max-width: 450px;
+  #destination main {
+    min-height: unset;
+  }
+  #destination main .container ul {
+    font-size: 1rem;
+  }
+  #destination main .container h1 {
+    text-align: start;
+    margin-left: 30px;
+  }
+  #destination main .container .moon-destin,
+#destination main .container .mars-destin,
+#destination main .container .europa-destin,
+#destination main .container .titan-destin {
+    display: none;
+    margin: 0 10%;
+  }
+  #destination main .container .moon-destin .col,
+#destination main .container .mars-destin .col,
+#destination main .container .europa-destin .col,
+#destination main .container .titan-destin .col {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #destination main .container .moon-destin .content h2,
+#destination main .container .mars-destin .content h2,
+#destination main .container .europa-destin .content h2,
+#destination main .container .titan-destin .content h2 {
+    font-size: 5rem;
+  }
+  #destination main .container .moon-destin .content p,
+#destination main .container .mars-destin .content p,
+#destination main .container .europa-destin .content p,
+#destination main .container .titan-destin .content p {
+    font-size: 1rem;
+    line-height: 28px;
+    margin-bottom: 40px;
+  }
+  #destination main .container .moon-destin .content .info,
+#destination main .container .mars-destin .content .info,
+#destination main .container .europa-destin .content .info,
+#destination main .container .titan-destin .content .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+  #destination main .container .moon-destin .content .info h3,
+#destination main .container .mars-destin .content .info h3,
+#destination main .container .europa-destin .content .info h3,
+#destination main .container .titan-destin .content .info h3 {
+    font-size: 0.875rem;
+  }
+  #destination main .container .moon-destin .content .info p,
+#destination main .container .mars-destin .content .info p,
+#destination main .container .europa-destin .content .info p,
+#destination main .container .titan-destin .content .info p {
+    font-size: 1.75rem;
+  }
+  #destination main .container img {
+    width: auto;
+  }
+}
+@media (min-width: 767px) and (max-height: 850px) {
+  #destination main .container img {
+    width: 40%;
   }
 }
 @media (min-width: 1200px) {
   #destination {
     background-image: url("/assets/destination/background-destination-desktop.jpg");
   }
-  #destination main .container {
-    max-width: 1200px;
-    flex-direction: row;
+  #destination main {
+    padding-top: 10%;
   }
 }
 * {

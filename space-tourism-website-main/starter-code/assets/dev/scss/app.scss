@@ -1,4 +1,6 @@
 @use "forward";
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Bellefair&family=Fraunces:opsz,wght@9..144,100&family=Smooch+Sans:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
 
 * {
     box-sizing: border-box;
@@ -14,6 +16,7 @@ ul{
     margin: 0;
     padding: 0;
 }
+
 .col{
     width: 100%;
 }

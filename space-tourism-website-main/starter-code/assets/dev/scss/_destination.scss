@@ -1,27 +1,36 @@
 @use "variables";
 @use "functions";
 
+
 #destination {
     background-image: url(variables.$destination_background_image_mobile);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    min-height: 750px;
+    min-height: 100vh;
+    overflow: hidden;
 
     main {
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        justify-content: center;
         color: variables.$text_color;
-        height: 100%;
+        padding-top: 20%;
+
+        hr{
+            margin: 0;
+            border: none;
+            height: 1px;
+            background-color: #383B4B;
+        }
 
         #moon:checked~.container .moon-destin,
         #mars:checked~.container .mars-destin,
         #europa:checked~.container .europa-destin,
         #titan:checked~.container .titan-destin {
-            display: block;
+            display: flex;
+            flex-direction: column;
         }
 
         input[type="radio"] {
@@ -29,21 +38,23 @@
         }
 
         .container {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
+            h1 {
+                text-align: center;
+                font-size: functions.multiplication(1);
+                font-family: "Barlow Condensed";
+            }
 
             ul {
-                position: absolute;
-                top: 50%;
-                width: 100%;
+                margin: 30px 0;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                label{
-                    margin: 0 functions.multiplication(0.5);
+                font-family: "Barlow Condensed";
+                font-size: functions.multiplication(0.875);
+                color: variables.$secondary_color;
+
+                label {
+                    margin: 0 functions.multiplication(1);
                 }
             }
 
@@ -52,10 +63,57 @@
             .europa-destin,
             .titan-destin {
                 display: none;
-                height: inherit;
+                margin: 30px;
+
+                .col {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                .content {
+                    h2 {
+                        font-family: "Bellefair";
+                        text-align: center;
+                        font-size: functions.multiplication(3.5);
+                        margin: 0;
+                    }
+
+                    p {
+                        font-family: 'Barlow';
+                        font-size: functions.multiplication(0.9375);
+                        text-align: center;
+                        color: variables.$secondary_color;
+                        line-height: 25px;
+                    }
+
+                    .info {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-transform: uppercase;
+                        
+                        div{
+                            margin-top: 40px;
+                        }
+
+                        h3 {
+                            font-size: functions.multiplication(0.875);
+                            color: variables.$secondary_color;
+                            margin: 0 0 10px 0;
+                            text-align: center;
+                        }
+
+                        p {
+                            font-size: functions.multiplication(1.75);
+                            margin: 0;
+                            color: variables.$text_color;
+                        }
+                    }
+                }
             }
 
-            picture img{
+            img {
                 width: 50%;
             }
         }
@@ -67,8 +125,64 @@
         background-image: url(variables.$destination_background_image_tablet);
 
         main {
+            min-height: unset;
             .container {
-                max-width: 450px;
+                ul {
+                    font-size: functions.multiplication(1);
+                }
+
+                h1 {
+                    text-align: start;
+                    margin-left: 30px;
+
+                }
+
+                .moon-destin,
+                .mars-destin,
+                .europa-destin,
+                .titan-destin {
+                    display: none;
+                    margin: 0 10%;
+
+                    .col {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                    }
+
+                    .content {
+                        h2 {
+                            font-size: functions.multiplication(5);
+                        }
+
+                        p {
+                            font-size: functions.multiplication(1);
+                            line-height: 28px;
+                            margin-bottom: 40px;
+                        }
+
+                        .info {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-evenly;
+                            text-align: center;
+
+                            h3 {
+                                font-size: functions.multiplication(0.875);
+                            }
+
+                            p {
+                                font-size: functions.multiplication(1.75);
+                            }
+                        }
+                    }
+                }
+                img {
+                    @media(max-height:850px){
+                        width: 40%;
+                    }
+                    width: auto;
+                }
             }
         }
     }
@@ -79,9 +193,8 @@
         background-image: url(variables.$destination_background_image_desktop);
 
         main {
+            padding-top: 10%;
             .container {
-                max-width: 1200px;
-                flex-direction: row;
             }
         }
     }

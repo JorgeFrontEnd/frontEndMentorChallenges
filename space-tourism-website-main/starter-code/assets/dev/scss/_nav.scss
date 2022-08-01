@@ -1,8 +1,6 @@
 @use "variables";
 @use "functions";
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&family=Fraunces:opsz,wght@9..144,100&family=Smooch+Sans:wght@100&display=swap');
-
 nav {
     position: relative;
     display: flex;
@@ -10,16 +8,11 @@ nav {
     justify-content: space-between;
     padding: 0;
     color: variables.$text_color;
+    
 
     #hamburguer_toggle {
         display: none;
     }
-
-    // .logo {
-    //     position: absolute;
-    //     top: 18px;
-    //     left: 39px;
-    // }
 
     .hamburguer {
         position: fixed;
@@ -82,7 +75,7 @@ nav {
             font-size: functions.multiplication(1.1);
             opacity: 1;
             padding: 0 functions.multiplication(1.5);
-            height: 100px;
+            height: 80px;
 
             li {
                 margin: 0 functions.multiplication(1);
@@ -109,7 +102,6 @@ nav {
                 }
             }
         }
-        /* */
         #hamburguer_toggle:checked~ul {
             display: flex;
             opacity: 1;
@@ -117,10 +109,6 @@ nav {
     }
 
     @media(min-width:1200px) {
-        // .logo {
-        //     top: 54px;
-        //     left: 55px;
-        // }
 
         ul {
             width: 55%;
